@@ -1,0 +1,40 @@
+﻿<Window x:Class="Action.Consultation.RecoPrint"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WindowsApplication1.Action.Consultation"
+             mc:Ignorable="d" 
+             d:DesignHeight="423" d:DesignWidth="752">
+    <Window.DataContext>
+        <local:BaseActionConsultationViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Button Content="PDF" Name="BPrint" Width="80" Height="35" Margin="0,5,20,0" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <ScrollViewer Name="scroll" Margin="5,40,0,0">
+            <Grid Margin="0,5,0,0" Name="RecoGrid">
+                <Grid HorizontalAlignment="Left" Margin="5,12,0,0" Name="Grid1" VerticalAlignment="Top" Width="900">
+                <!--<DataGrid AutoGenerateColumns="True" Height="339" HorizontalAlignment="Left" Margin="6,54,0,0" Name="DataGrid1" VerticalAlignment="Top" Width="716" ItemsSource="{Binding Path=RecoTableView}">-->
+                <!--<DataGrid.Columns>
+                        <DataGridTemplateColumn Header="Secteur" IsReadOnly="True" MinWidth="100" MaxWidth="200">
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Industry FGA" IsReadOnly="True" MinWidth="100" MaxWidth="200">
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Asset Name" IsReadOnly="True" MinWidth="100" MaxWidth="200">
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Recommandation" IsReadOnly="True" MinWidth="200" MaxWidth="300">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextWrapping" Value="Wrap" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>-->
+                <!--</DataGrid>-->
+                <!--<DataGrid Name="DGCroissance" ItemsSource="{Binding Path=RecoTableView}" CanUserAddRows="False" AutoGenerateColumns="True" Grid.Row="2" HorizontalGridLinesBrush="#FF688CAF" VerticalGridLinesBrush="#FF688CAF" SelectionMode="Extended">
+                </DataGrid>-->
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+    </Grid>
+</Window>

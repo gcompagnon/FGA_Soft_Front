@@ -1,0 +1,754 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{24168AE0-6B8E-4427-88A0-F903077C3922}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <StartupObject>
+    </StartupObject>
+    <RootNamespace>WindowsApplication1</RootNamespace>
+    <AssemblyName>Front</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>fga.ico</ApplicationIcon>
+    <ManifestCertificateThumbprint>6445B60D47F88E15CF37A9E1A0E8A9E7C6E570B9</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Front_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>\\vill1\Partage\,FGA Soft\CLICKONCE\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <TargetCulture>fr</TargetCulture>
+    <ProductName>FGA FRONT</ProductName>
+    <PublisherName>FGA SOFT</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.6.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Front.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Front.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Front.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bloomberglp.Blpapi, Version=3.4.3.5, Culture=neutral, PublicKeyToken=ec3efa8c033c2bc5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\FGA_Soft_Library\BloombergAPIv3\bin\Bloomberglp.Blpapi.dll</HintPath>
+    </Reference>
+    <Reference Include="DataGridViewAutoFilter">
+      <HintPath>LibraryReferences\DataGridViewAutoFilter.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.4.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\FGA_Soft_Library\itextsharp-dll-core\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="RichEditBox">
+      <HintPath>LibraryReferences\RichEditBox.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Deployment" />
+    <Import Include="System.Deployment.Internal" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Windows.Forms.Design" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="WindowsApplication1.TableDynamique" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accueil.Designer.vb">
+      <DependentUpon>Accueil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Accueil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Action\Coefficient\BaseActionCoefIndice.xaml.vb">
+      <DependentUpon>BaseActionCoefIndice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Coefficient\CoefView.vb" />
+    <Compile Include="Action\Coefficient\CoefViewModel.vb" />
+    <Compile Include="Action\Coefficient\CoefViewModelIndice.vb" />
+    <Compile Include="Action\Coefficient\CoefViewModelSecteur.vb" />
+    <Compile Include="Action\Coefficient\CritereSupervisor.vb" />
+    <Compile Include="Action\Coefficient\CritereView.vb" />
+    <Compile Include="Action\Coefficient\BaseActionCoefSecteur.xaml.vb">
+      <DependentUpon>BaseActionCoefSecteur.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Coefficient\SecteurView.vb" />
+    <Compile Include="Action\Consultation\ColumnFilter.vb" />
+    <Compile Include="Action\Consultation\PrintPreviewTest.xaml.vb">
+      <DependentUpon>PrintPreviewTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Consultation\RecoPrint.xaml.vb">
+      <DependentUpon>RecoPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Consultation\RowConverter.vb" />
+    <Compile Include="Action\Consultation\ColumnConfig.vb" />
+    <Compile Include="Action\Consultation\GenRow.vb" />
+    <Compile Include="Action\Consultation\BaseActionConsultationViewModel.vb" />
+    <Compile Include="Action\Consultation\GidConfigRow.vb" />
+    <Compile Include="Action\Consultation\GridConfig.xaml.vb">
+      <DependentUpon>GridConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Consultation\GridConfigViewModel.vb" />
+    <Compile Include="Action\Consultation\WpfPrint.vb" />
+    <Compile Include="Action\CorrectImportStockWindow.xaml.vb">
+      <DependentUpon>CorrectImportStockWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Note\ColumnNoteSupervisor.vb" />
+    <Compile Include="Action\Note\NoteViewModel.vb" />
+    <Compile Include="Action\Note\TableNote.vb" />
+    <Compile Include="Action\Secteur.vb" />
+    <Compile Include="Action\Consultation\BaseActionConsultation.xaml.vb">
+      <DependentUpon>BaseActionConsultation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExportExcel.vb" />
+    <Compile Include="Strategie\AllocationGrille.Designer.vb">
+      <DependentUpon>AllocationGrille.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Strategie\AllocationGrille.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableDynamique\ColumnFormat.vb" />
+    <Compile Include="Taux\BaseEmetteurs\AjouterSignature.Designer.vb">
+      <DependentUpon>AjouterSignature.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Taux\BaseEmetteurs\AjouterSignature.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Referentiel\AjoutLot.Designer.vb">
+      <DependentUpon>AjoutLot.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Referentiel\AjoutLot.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Action\BaseAction.Designer.vb">
+      <DependentUpon>BaseAction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Action\BaseAction.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileLink\BaseActionCopyFile.xaml.vb">
+      <DependentUpon>BaseActionCopyFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Action\BaseActionImportation.Designer.vb">
+      <DependentUpon>BaseActionImportation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Action\BaseActionImportation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Action\BaseActionRecommandation.xaml.vb">
+      <DependentUpon>BaseActionRecommandation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FileLink\BaseActionShowFile.xaml.vb">
+      <DependentUpon>BaseActionShowFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Taux\BaseEmetteurs\BaseEmetteurs.Designer.vb">
+      <DependentUpon>BaseEmetteurs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Taux\BaseEmetteurs\BaseEmetteurs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class1.vb" />
+    <Compile Include="DGrid.vb" />
+    <Compile Include="Excel.vb" />
+    <Compile Include="Fichier.vb" />
+    <Compile Include="Dossier.vb" />
+    <Compile Include="ConnectionOmega.vb" />
+    <Compile Include="FileLink\File.vb" />
+    <Compile Include="FileLink\Image.vb" />
+    <Compile Include="GridMenu.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Action\HelpWindowAction.xaml.vb">
+      <DependentUpon>HelpWindowAction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PopupWindowSave.xaml.vb">
+      <DependentUpon>PopupWindowSave.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Radar.Designer.vb">
+      <DependentUpon>Radar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Radar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModelPortfolio.Designer.vb">
+      <DependentUpon>ModelPortfolio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModelPortfolio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileLink\StockTreeViewModel.vb" />
+    <Compile Include="FileLink\StockViewModel.vb" />
+    <Compile Include="Solv2.Designer.vb">
+      <DependentUpon>Solv2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Solv2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Taux\BaseEmetteurs\Revue.Designer.vb">
+      <DependentUpon>Revue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Taux\BaseEmetteurs\Revue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ini.vb" />
+    <Compile Include="Referentiel\Reconciliation.Designer.vb">
+      <DependentUpon>Reconciliation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Referentiel\Reconciliation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RichTextBoxPrintCtrl.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Email.vb" />
+    <Compile Include="DataGridViewPrinter.vb" />
+    <Compile Include="Taux\PrimeObligIboxx\Iboxx.Designer.vb">
+      <DependentUpon>Iboxx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Taux\PrimeObligIboxx\Iboxx.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Taux\BaseEmetteurs\ModificationSignature.Designer.vb">
+      <DependentUpon>ModificationSignature.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Taux\BaseEmetteurs\ModificationSignature.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintOptions.Designer.vb">
+      <DependentUpon>PrintOptions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PrintOptions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileLink\Stock.vb" />
+    <Compile Include="Strategie\AccueilTitreGrille.Designer.vb">
+      <DependentUpon>AccueilTitreGrille.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Strategie\AccueilTitreGrille.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Strategie\AffecterTitreGrille.Designer.vb">
+      <DependentUpon>AffecterTitreGrille.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Strategie\AffecterTitreGrille.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Strategie\MajTitreManuel.Designer.vb">
+      <DependentUpon>MajTitreManuel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Strategie\MajTitreManuel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Strategie\SuiviTitreManuel.Designer.vb">
+      <DependentUpon>SuiviTitreManuel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Strategie\SuiviTitreManuel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableDynamique\Column.vb" />
+    <Compile Include="TableDynamique\Cell.vb" />
+    <Compile Include="Action\Note\ColumnNoteModel.vb" />
+    <Compile Include="Utilities\Helpers.vb" />
+    <Compile Include="Utilities\NotVisibilityConverter.vb" />
+    <Compile Include="Watcher\Watcher.vb" />
+    <Compile Include="TableDynamique\Table.vb" />
+    <Compile Include="Action\Note\TableNoteModel.vb" />
+    <Compile Include="Action\Note\BaseActionNote.xaml.vb">
+      <DependentUpon>BaseActionNote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Converters.vb" />
+    <Compile Include="Watcher\Supervisor.vb" />
+    <Compile Include="Watcher\IWatcher.vb" />
+    <Compile Include="Utilities\NotConverter.vb" />
+    <Compile Include="Utilities\Tree.vb" />
+    <Compile Include="Utilities\TreeAction.vb" />
+    <Compile Include="Utilisateur.vb" />
+    <Compile Include="Taux\BaseEmetteurs\RecommandationPays.Designer.vb">
+      <DependentUpon>RecommandationPays.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Taux\BaseEmetteurs\RecommandationPays.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Referentiel\GestionTable.Designer.vb">
+      <DependentUpon>GestionTable.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Referentiel\GestionTable.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Referentiel\ModificationUtilisateur.Designer.vb">
+      <DependentUpon>ModificationUtilisateur.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Referentiel\ModificationUtilisateur.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Taux\BaseEmetteurs\RecommandationSecteur.Designer.vb">
+      <DependentUpon>RecommandationSecteur.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Taux\BaseEmetteurs\RecommandationSecteur.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScriptBDD.Designer.vb">
+      <DependentUpon>ScriptBDD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptBDD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Referentiel\Transparence.Designer.vb">
+      <DependentUpon>Transparence.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Referentiel\Transparence.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Connection.vb" />
+    <Compile Include="Referentiel\AjoutUtilisateur.Designer.vb">
+      <DependentUpon>AjoutUtilisateur.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Referentiel\AjoutUtilisateur.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log.vb" />
+    <Compile Include="ELog.vb" />
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Utilities\VisibilityConverter.vb" />
+    <Compile Include="Referentiel\Verification.Designer.vb">
+      <DependentUpon>Verification.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Referentiel\Verification.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Accueil.resx">
+      <DependentUpon>Accueil.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strategie\AllocationGrille.resx">
+      <DependentUpon>AllocationGrille.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Taux\BaseEmetteurs\AjouterSignature.resx">
+      <DependentUpon>AjouterSignature.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Referentiel\AjoutLot.resx">
+      <DependentUpon>AjoutLot.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Referentiel\AjoutUtilisateur.resx">
+      <DependentUpon>AjoutUtilisateur.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\BaseAction.resx">
+      <DependentUpon>BaseAction.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\BaseActionImportation.resx">
+      <DependentUpon>BaseActionImportation.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Taux\BaseEmetteurs\BaseEmetteurs.resx">
+      <DependentUpon>BaseEmetteurs.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Taux\PrimeObligIboxx\Iboxx.resx">
+      <DependentUpon>Iboxx.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelPortfolio.resx">
+      <DependentUpon>ModelPortfolio.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Taux\BaseEmetteurs\ModificationSignature.resx">
+      <DependentUpon>ModificationSignature.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintOptions.resx">
+      <DependentUpon>PrintOptions.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Radar.resx">
+      <DependentUpon>Radar.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Taux\BaseEmetteurs\RecommandationPays.resx">
+      <DependentUpon>RecommandationPays.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Referentiel\GestionTable.resx">
+      <DependentUpon>GestionTable.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Referentiel\ModificationUtilisateur.resx">
+      <DependentUpon>ModificationUtilisateur.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Taux\BaseEmetteurs\RecommandationSecteur.resx">
+      <DependentUpon>RecommandationSecteur.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Referentiel\Reconciliation.resx">
+      <DependentUpon>Reconciliation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Taux\BaseEmetteurs\Revue.resx">
+      <DependentUpon>Revue.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScriptBDD.resx">
+      <DependentUpon>ScriptBDD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Solv2.resx">
+      <DependentUpon>Solv2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strategie\AccueilTitreGrille.resx">
+      <DependentUpon>AccueilTitreGrille.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strategie\AffecterTitreGrille.resx">
+      <DependentUpon>AffecterTitreGrille.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strategie\MajTitreManuel.resx">
+      <DependentUpon>MajTitreManuel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strategie\SuiviTitreManuel.resx">
+      <DependentUpon>SuiviTitreManuel.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Referentiel\Verification.resx">
+      <DependentUpon>Verification.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Front.snk" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.ChartControls">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Chart Controls for Dotnet Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Office.PIARedist.2007">
+      <Visible>False</Visible>
+      <ProductName>Assemblys PIA %28Primary Interop Assembly%29 de Microsoft Office 2007</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VisualBasic.PowerPacks.10.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Basic PowerPacks 10.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fga.ico" />
+    <Content Include="IMAGES\base.png" />
+    <Content Include="IMAGES\Bloomberg.jpg" />
+    <Content Include="IMAGES\check.jpg" />
+    <Content Include="IMAGES\croix verte.jpg" />
+    <Content Include="IMAGES\delete.jpg" />
+    <Resource Include="IMAGES\down.jpg" />
+    <Resource Include="IMAGES\excel.jpeg" />
+    <None Include="IMAGES\exp.png" />
+    <Content Include="IMAGES\F.jpg" />
+    <Content Include="IMAGES\Factset.jpg" />
+    <Content Include="IMAGES\fga.gif" />
+    <Content Include="IMAGES\fga.ico" />
+    <Content Include="IMAGES\fichier.jpg" />
+    <Content Include="IMAGES\gmail.jpg" />
+    <Content Include="IMAGES\help.JPG" />
+    <Content Include="IMAGES\iboxx.jpg" />
+    <Content Include="IMAGES\imprimante.jpg" />
+    <Content Include="IMAGES\load.jpg" />
+    <Content Include="IMAGES\mail.jpg" />
+    <Content Include="IMAGES\malakoff.ico" />
+    <Content Include="IMAGES\malakoff.png" />
+    <Content Include="IMAGES\moins.jpg" />
+    <None Include="IMAGES\parametre.png" />
+    <Content Include="IMAGES\pdf.jpg" />
+    <Content Include="IMAGES\plus.jpg" />
+    <Content Include="IMAGES\police.jpg" />
+    <Content Include="IMAGES\refresh.jpg" />
+    <Content Include="IMAGES\server.jpg" />
+    <Resource Include="IMAGES\up.jpg" />
+    <None Include="IMAGES\socre.png" />
+    <Content Include="IMAGES\update.jpg" />
+    <Content Include="IMAGES\utilisateurs.jpg" />
+    <Content Include="IMAGES\émetteur.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="fr\Microsoft.VisualBasic.PowerPacks.Vs.resources">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualBasic.PowerPacks.Vs">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="System.Windows.Forms.DataVisualization.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Action\Coefficient\BaseActionCoefIndice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Action\Coefficient\BaseActionCoefSecteur.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Action\Consultation\GridConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Action\Consultation\PrintPreviewTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Action\Consultation\RecoPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Action\CorrectImportStockWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Action\Consultation\BaseActionConsultation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FileLink\BaseActionCopyFile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Action\BaseActionRecommandation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FileLink\BaseActionShowFile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Action\HelpWindowAction.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PopupWindowSave.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Action\Note\BaseActionNote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CustomToolNamespace>TableDynamique</CustomToolNamespace>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Action\Consultation\pdf\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

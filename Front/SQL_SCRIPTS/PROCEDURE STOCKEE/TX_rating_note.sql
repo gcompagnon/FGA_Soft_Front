@@ -1,0 +1,19 @@
+
+CREATE PROCEDURE TX_rating_note
+   
+AS 
+
+--SELECT * FROm TMP_SIGNATURE_OMEGA
+--SELECT * FROM TX_RATING_EMETTEUR
+
+UPDATE TMP_SIGNATURE_OMEGA
+set interneLT = rating_in_LT
+FROm TMP_SIGNATURE_OMEGA o, TX_RATING_EMETTEUR r
+where o.code=id_emetteur
+
+/*
+UPDATE TMP_SIGNATURE_OMEGA
+set note_isr = r.note
+FROm TMP_SIGNATURE_OMEGA o, TX_NOTE_ISR r
+where o.code=r.code
+*/ 

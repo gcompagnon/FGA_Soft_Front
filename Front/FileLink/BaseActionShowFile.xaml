@@ -1,0 +1,120 @@
+﻿<Window x:Class="FileLink.BaseActionShowFile"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:utilities="clr-namespace:WindowsApplication1.Utilities"
+             xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+             mc:Ignorable="d" HorizontalAlignment="Stretch" Height="450" Width="850" WindowStyle="ThreeDBorderWindow" Title="Base de fichiers">
+    <Grid Name="Grid1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="174*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="50*" />
+        </Grid.ColumnDefinitions>
+        
+        <Border>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Name="TFindTreeView" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Center" MinWidth="80" Grid.Row="0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" />
+                <Button Command="{Binding SearchCommand}" Content="Rechercher" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Name="BFindTreeView" VerticalAlignment="Center" MinWidth="80" />
+            </StackPanel>
+        </Border>
+        <GridSplitter Grid.RowSpan="4" Grid.Column="1" HorizontalAlignment="Center" Name="GridSplitterGeneral" ShowsPreview="True" MinWidth="3" Background="Black" />
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" CanContentScroll="True" HorizontalAlignment="Stretch" >
+            <TreeView Name="TVGeneral" ItemsSource="{Binding TopSector}">
+                <TreeView.ItemContainerStyle>
+                    <Style TargetType="{x:Type TreeViewItem}">
+                        <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+                        <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+                        <Setter Property="FontWeight" Value="Normal" />
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TreeView.ItemContainerStyle>
+
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                        <TextBlock Text="{Binding Name}" />
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+        </ScrollViewer>
+        <ScrollViewer Grid.Column="3" Grid.Row="0" Grid.RowSpan="2" >
+            
+        <StackPanel >
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Expander}">
+                    <Setter Property="Margin" Value="0,0,0,10"/>
+                </Style>
+            </StackPanel.Resources>
+            <Expander Name="ESearch" Header="Gestion des Fichiers" HorizontalAlignment="Stretch" VerticalAlignment="Top" ExpandDirection="Down" IsExpanded="False" MinHeight="0" MaxHeight="400">
+                <StackPanel>
+                        <StackPanel.ScrollOwner>
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" />
+                        </StackPanel.ScrollOwner>
+                        <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="3">
+                            <TextBox Name="TFindFile" VerticalAlignment="Center" MinWidth="80" TabIndex="{Binding}" MaxLines="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" />
+                            <Button Content="Rechercher" Name="BFindFile" VerticalAlignment="Center" MinWidth="80" />
+                            <StackPanel Height="auto" Name="StackPanel1" Width="auto" Margin="10,0">
+                                <CheckBox Content="Fichier" Name="CBFindFile" IsChecked="True" />
+                                <CheckBox Content="Dossier"  Name="CBFindDirectory" />
+                            </StackPanel>
+                            <Button Content="Ajouter" Grid.Column="6" HorizontalAlignment="Stretch" Name="BAddFile" VerticalAlignment="Center" MinWidth="80" />
+                            <Button Content="Copier" Grid.Column="7" MinWidth="80" Name="BCopyFile" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+                            <Button Content="Supprimer" Grid.Column="7" HorizontalAlignment="Stretch" Name="BDelFile" VerticalAlignment="Center" MinWidth="80" />
+                        </StackPanel>
+                        <DataGrid x:Name="DGFilesFound" Grid.Row="1" ItemsSource="{Binding FoundFiles}" AutoGenerateColumns="False" GridLinesVisibility="None" CanUserAddRows="False" CanUserDeleteRows="False">
+                            <DataGrid.ItemContainerStyle>
+                                <Style TargetType="DataGridRow">
+                                    <Setter Property="ToolTip" Value="{Binding Url}" />
+                                </Style>
+                            </DataGrid.ItemContainerStyle>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Fichier" Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}" SortDirection="Ascending" />
+                                <DataGridTextColumn Header="Description" Binding="{Binding Description, UpdateSourceTrigger=PropertyChanged}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </StackPanel>
+            </Expander>
+            <Expander Name="EValeur" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ExpandDirection="Down" IsExpanded="True" MaxHeight="400">
+                <DataGrid x:Name="DGFiles" ItemsSource="{Binding Files}" HeadersVisibility="Column" AutoGenerateColumns="False" GridLinesVisibility="None" CanUserAddRows="False" CanUserDeleteRows="False">
+                    <DataGrid.ItemContainerStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="ToolTip" Value="{Binding Url}" />
+                        </Style>
+                    </DataGrid.ItemContainerStyle>
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="Supprimer">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Click="DG_BDelete_Click" VerticalAlignment="Center" Background="#FFB7B7B7" Width="20" Content="X" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Date" Binding="{Binding LinkedDate}" IsReadOnly="True" />
+                        <DataGridTextColumn Header="Fichier" Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}" SortDirection="Ascending" />
+                        <DataGridTextColumn Header="Description" Binding="{Binding Description, UpdateSourceTrigger=PropertyChanged}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Expander>
+        </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
+

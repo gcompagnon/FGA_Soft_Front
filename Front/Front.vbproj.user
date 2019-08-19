@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PublishUrlHistory>\\vill1\Partage\,FGA Soft\CLICKONCE\|\\vill1\Partage\,FGA Soft\CLICKONCE_PREPROD\|\\vill1\Partage\,FGA Soft\ClickOnce\|\\vill1\Partage\,FGA Soft\SETUP\|G:\SNV\My project\</PublishUrlHistory>
+    <InstallUrlHistory>\\vill1\Partage\,FGA Soft\SETUP\|\\vill1\partage\SNV\My project\</InstallUrlHistory>
+    <SupportUrlHistory>
+    </SupportUrlHistory>
+    <UpdateUrlHistory>
+    </UpdateUrlHistory>
+    <BootstrapperUrlHistory>
+    </BootstrapperUrlHistory>
+    <ErrorReportUrlHistory>
+    </ErrorReportUrlHistory>
+    <FallbackCulture>fr-FR</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+    <ProjectView>ShowAllFiles</ProjectView>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableSecurityDebugging>false</EnableSecurityDebugging>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ReferencePath>C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\</ReferencePath>
+  </PropertyGroup>
+</Project>

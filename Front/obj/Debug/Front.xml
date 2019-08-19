@@ -1,0 +1,2565 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Front
+</name>
+</assembly>
+<members>
+<member name="M:WindowsApplication1.Accueil.AccueilIHM_Load(System.Object,System.EventArgs)">
+ <summary>
+ Initilisation ihm Accueil
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Accueil.AjoutToolStripMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ Menu ajouter un nouvelle utilisateur
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Accueil.AccueilIHM_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+ <summary>
+ Fermer ou non l'application
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Accueil.ModificationToolStripMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ Menu modification utilisateur
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Accueil.GestionToolStripMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ Menu gestion des tables de la bdd
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Accueil.ScriptBDDToolStripMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ Menu ouvrir script BDD
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Accueil.TestToolStripMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ Menu ouvrir base émetteur
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Accueil.AnalyseIBoxxToolStripMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ Menu ouvrir iboxx
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Accueil.TransparenceToolStripMenuItem1_Click(System.Object,System.EventArgs)">
+ <summary>
+ Menu ouvrir transparence
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Accueil.RéconciliationToolStripMenuItem1_Click(System.Object,System.EventArgs)">
+ <summary>
+ Menu ouvrir réconciliation
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Accueil.TestToolStripMenuItem1_Click(System.Object,System.EventArgs)">
+ <summary>
+ Menu ouvrir base action Score
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Accueil.ConsultationToolStripMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ Menu ouvrir base action Consultation
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Accueil.ExtractionToolStripMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ Menu reporting ouvrir extraction
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Accueil.droitUtilisateur">
+ <summary>
+ Gere les menus en fonction des droits : menu visible ou non
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Accueil.NewScreenToolStripMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ Click sur le menu NewScreen : Ouvre la New Screen
+ </summary>
+</member>
+<member name="T:WindowsApplication1.Action.Coefficient.BaseActionCoefIndice">
+<summary>
+BaseActionCoefIndice
+</summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.BaseActionCoefIndice.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModel.populateSecteurs(System.Boolean)">
+ <summary>
+ Récupère l'ensemble des secteurs.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModel.getCoefsFromCritere(WindowsApplication1.Action.Coefficient.CritereView,System.Boolean)">
+ <summary>
+ Récupère les coefficients des différents secteurs sur un critère donnée.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModel.saveToBDD(WindowsApplication1.Action.Coefficient.CoefView,System.Boolean)">
+ <summary>
+ Sauvegarde un coefficient.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModel.ExportToExcel">
+ <summary>
+ Support de l export de l excel
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModel.populateCriteres">
+ <summary>
+ Récupère l'ensemble des critères
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModel.isRoot(WindowsApplication1.Action.Coefficient.CritereView)">
+ <summary>
+ Détermine si le critère n'a pas de parent.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModel.isLeaf(WindowsApplication1.Action.Coefficient.CritereView)">
+ <summary>
+ Détermine si le critère n'a pas d'enfant.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModel.fillCriteresCoefs">
+ <summary>
+ Récupère les coefficients des critères
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModel.updateCoefsBottomUp(WindowsApplication1.Action.Coefficient.CoefView)">
+ <summary>
+ Calcul les coefficients en remontant sur les parents.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModel.computeTotal">
+ <summary>
+ Calcul le score total de chaque secteur, la somme des coefficients des critères racines.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModel.ComputeCoefs">
+ <summary>
+ Recalcul tous les coefficients.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModel.updateCoefsTopDown(WindowsApplication1.Action.Coefficient.CritereView,System.Int32)">
+ <summary>
+ Calcul les coefficients en descendant sur les enfants
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModel.saveToBDD">
+ <summary>
+ Sauvegarde les différents critères et coefficients dans la base.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModel.saveToBDD(WindowsApplication1.Action.Coefficient.CritereView)">
+ <summary>
+ Sauvegarde un critère.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModelIndice.getSQLCritere(System.Boolean)">
+ <summary>
+ Récupère l'ensemble des critères liés aux indices
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModelIndice.populateSecteurs(System.Boolean)">
+ <summary>
+ Récupère l'ensemble des secteurs.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModelIndice.getCoefsFromCritere(WindowsApplication1.Action.Coefficient.CritereView,System.Boolean)">
+ <summary>
+ Récupère les coefficients des différents secteurs sur un critère donnée.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModelIndice.saveToBDD(WindowsApplication1.Action.Coefficient.CoefView,System.Boolean)">
+ <summary>
+ Sauvegarde un coefficient.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModelIndice.ExportToExcel">
+ <summary>
+ export en feuille excel
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModelSecteur.getSQLCritere(System.Boolean)">
+ <summary>
+ Récupère l'ensemble des critères liés aux secteurs
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModelSecteur.populateOtherCriteres">
+ <summary>
+ Récupère l'ensemble des critères numériques sur les valeurs.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModelSecteur.populateSecteurs(System.Boolean)">
+ <summary>
+ Récupère les secteurs avec des coefficients.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModelSecteur.populateOtherSecteurs">
+ <summary>
+ Récupère l'ensemble des secteurs.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModelSecteur.getCoefsFromCritere(WindowsApplication1.Action.Coefficient.CritereView,System.Boolean)">
+ <summary>
+ Récupère les coefficients des différents secteurs sur un critère donnée.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModelSecteur.saveToBDD(WindowsApplication1.Action.Coefficient.CoefView,System.Boolean)">
+ <summary>
+ Sauvegarde un coefficient.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CoefViewModelSecteur.ExportToExcel">
+ <summary>
+ export en feuille excel
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:WindowsApplication1.Action.Coefficient.CritereView.Children">
+ <summary>
+ Liste des critères enfants triées par position .
+ </summary>
+</member>
+<member name="P:WindowsApplication1.Action.Coefficient.CritereView.IsRoot">
+ <summary>
+ Return Weither the critere is a root or not.
+ </summary>
+</member>
+<member name="P:WindowsApplication1.Action.Coefficient.CritereView.IsMiddle">
+ <summary>
+ Return Weither the critere parent is a root.
+ </summary>
+</member>
+<member name="P:WindowsApplication1.Action.Coefficient.CritereView.IsLeaf">
+ <summary>
+ Return Weither the critere is a leaf or not.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CritereView.toList">
+ <summary>
+ Récupère sous forme de liste l'objet actuel et l'ensemble de ses descendants triés par position.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CritereView.addChild(WindowsApplication1.Action.Coefficient.CritereView)">
+ <summary>
+ Ajoute child à Children, met à jour son parent et sa position puis trie la liste selon la position des enfants.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.CritereView.update">
+ <summary>
+ Met à jour les données.
+ </summary>
+</member>
+<member name="T:WindowsApplication1.Action.Coefficient.BaseActionCoefSecteur">
+<summary>
+BaseActionCoefSecteur
+</summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.BaseActionCoefSecteur.swapCritereLeaf(WindowsApplication1.Action.Coefficient.CritereView,System.Boolean)">
+ <summary>
+ change le critere avec son adjacent.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.BaseActionCoefSecteur.swapCritereMiddle(WindowsApplication1.Action.Coefficient.CritereView,System.Boolean)">
+ <summary>
+ change le critere parent avec son adjacent.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.BaseActionCoefSecteur.findNextCritere(WindowsApplication1.Action.Coefficient.CritereView,System.Boolean)">
+ <summary>
+ Recherche le critere frère adjacent dans le sens de "up".
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.BaseActionCoefSecteur.findNextPos(System.Int32,System.Collections.Generic.List{WindowsApplication1.Action.Coefficient.CritereView},System.Boolean)">
+ <summary>
+ Recherche la position adjacente dans le sens up
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.BaseActionCoefSecteur.BConfig_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Show Or hide description Column.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.BaseActionCoefSecteur.changeVisibility(System.Windows.Controls.DataGridColumn@)">
+ <summary>
+ Switch column visibility between visible and hidden.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.BaseActionCoefSecteur.BAddSector_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Ajout d'un nouveau secteur
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.BaseActionCoefSecteur.BAddCriteria_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Ajout d'un nouveau critère.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.BaseActionCoefSecteur.DG_BPosUp_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Monte la catégorie ou le critère d'une position
+ </summary>
+ <remarks>Des changements de catégorie ou de root peuvent avoir lieu</remarks>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.BaseActionCoefSecteur.DG_BPosDown_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Descend la catégorie ou le critère d'une position
+ </summary>
+ <remarks>Des changements de catégorie ou de root peuvent avoir lieu</remarks>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.BaseActionCoefSecteur.AddCategory_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Ajout d'une nouvelle catégorie.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.BaseActionCoefSecteur.DeleteCriteria_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Supprime une catégorie ou un critère.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.BaseActionCoefSecteur.BExportExcel_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+  extraction des donnees dans un nouveau fichier excel
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Action.Coefficient.BaseActionCoefSecteur.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:WindowsApplication1.Action.Consultation.RecoPrint">
+<summary>
+RecoPrint
+</summary>
+</member>
+<member name="M:WindowsApplication1.Action.Consultation.RecoPrint.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:WindowsApplication1.Action.Consultation.GridConfig">
+<summary>
+GridConfig
+</summary>
+</member>
+<member name="M:WindowsApplication1.Action.Consultation.GridConfig.DG_BPosUp_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Monte la catégorie ou le critère d'une position
+ </summary>
+ <remarks>Des changements de catégorie ou de root peuvent avoir lieu</remarks>
+</member>
+<member name="M:WindowsApplication1.Action.Consultation.GridConfig.DG_BPosDown_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Descend la catégorie ou le critère d'une position
+ </summary>
+ <remarks>Des changements de catégorie ou de root peuvent avoir lieu</remarks>
+</member>
+<member name="M:WindowsApplication1.Action.Consultation.GridConfig.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:WindowsApplication1.Action.Consultation.BaseActionConsultation">
+<summary>
+BaseActionConsultation
+</summary>
+</member>
+<member name="M:WindowsApplication1.Action.Consultation.BaseActionConsultation.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:WindowsApplication1.Action.CorrectImportStockWindow">
+<summary>
+CorrectImportStockWindow
+</summary>
+</member>
+<member name="M:WindowsApplication1.Action.CorrectImportStockWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="M:WindowsApplication1.Action.Note.NoteViewModel.loadTables">
+ <summary>
+ Charge les tables et leurs colonnes
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Note.NoteViewModel.fillColumnsInTable(WindowsApplication1.Action.Note.TableNoteModel)">
+ <summary>
+ Récupére les colonnes d'une table donnée.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Note.NoteViewModel.fillColumnList">
+ <summary>
+ Remplit la liste de colonne avec les différentes colonnes contenues dans toutes les tables
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Note.NoteViewModel.fillOtherColumns(WindowsApplication1.Action.Note.TableNoteModel)">
+ <summary>
+ Met à jour OtherColumns à partir de ColumnList en enlevant les colonnes de la table actuelle.
+ </summary>
+ <remarks>OtherColumns est trié par ordre alphabétique.</remarks>
+</member>
+<member name="M:WindowsApplication1.Action.Note.NoteViewModel.selectTable(System.String)">
+ <summary>
+ Définit la table actuellement sélectionnée.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Note.NoteViewModel.getBit(System.Boolean)">
+ <summary>
+ Get Bit From Boolean (True = 1)
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Note.NoteViewModel.addColumn(WindowsApplication1.Action.Note.ColumnNoteModel)">
+ <summary>
+ Ajoute une colonne à la liste de colonnes.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Note.NoteViewModel.removeColumn(WindowsApplication1.Action.Note.TableNoteModel,WindowsApplication1.Action.Note.ColumnNoteModel)">
+ <summary>
+ Supprime une colonne d'une table en mettant à jour les listes de colonnes.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Note.NoteViewModel.saveAll">
+ <summary>
+ Enregistre tous les changements des tables et des colonnes.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Note.NoteViewModel.removeFromDB(WindowsApplication1.Action.Note.ColumnSlot)">
+ <summary>
+ Remove column and its record from database.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Note.NoteViewModel.sortColumns``1(System.Collections.ObjectModel.Collection{``0},System.String,System.Boolean)">
+ <summary>
+ Tri sur une collection en fonction d'une propriété de T.
+ </summary>
+ <param name="property_name">nom de la propriété</param>
+ <param name="ascending">ordre du tri</param>
+</member>
+<member name="M:WindowsApplication1.Action.Note.ColumnNoteModel.update">
+ <summary>
+ Met à jour tous les champs
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Action.Note.TableNoteModel.uniqueNameInColumns(System.String)">
+ <summary>
+ Retourne True si le name n'est pas dans Columns.
+ </summary>
+ <remarks>La casse n'est pas prise en compte.</remarks>
+</member>
+<member name="M:WindowsApplication1.Action.Note.TableNoteModel.update(WindowsApplication1.Action.Note.ColumnNoteModel)">
+ <summary>
+ Met à jour le nom d'une colonne si elle n'existe pas déjà.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Note.TableNoteModel.AddColumn(WindowsApplication1.Action.Note.ColumnNoteModel)">
+ <summary>
+ Ajoute une colonne à la table.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Note.TableNoteModel.existName(System.Collections.ObjectModel.ObservableCollection{WindowsApplication1.Action.Note.ColumnNoteModel},WindowsApplication1.Action.Note.ColumnNoteModel)">
+ <summary>
+ Vérifie si le nom d'une colonne existe dans la collection.
+ </summary>
+</member>
+<member name="T:WindowsApplication1.Action.Note.BaseActionNote">
+<summary>
+BaseActionNote
+</summary>
+</member>
+<member name="M:WindowsApplication1.Action.Note.BaseActionNote.DG_BDelete_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Suppression d'une ligne
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Note.BaseActionNote.CBSelectedTable_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+ <summary>
+ Changement de table
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Note.BaseActionNote.DG_BPosUp_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Déplacement d'une ligne vers le haut
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Note.BaseActionNote.DG_BPosDown_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Déplacement d'une ligne vers le bas
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Note.BaseActionNote.BAddColumn_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ Ajoute une nouvelle colonne.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Note.BaseActionNote.Window_KeyDown(System.Object,System.Windows.Input.KeyEventArgs)">
+ <summary>
+ Déselectionne sur la touche "Echappe"
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.Note.BaseActionNote.SwapPosition(System.Collections.Generic.List{WindowsApplication1.Action.Note.ColumnNoteModel},System.Collections.Generic.List{WindowsApplication1.Action.Note.ColumnNoteModel})">
+ <summary>
+ Déplace selected colonnes de columns d'une position.
+ </summary>
+ <remarks>columns doit être trié en fonction d'un déplacement vers le bas ou vers le haut.</remarks>
+</member>
+<member name="M:WindowsApplication1.Action.Note.BaseActionNote.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="F:WindowsApplication1.Action.BaseAction.grids">
+ <summary>
+ Liste des différentes grilles pour gérer les correspondances
+ </summary>
+</member>
+<member name="F:WindowsApplication1.Action.BaseAction.selectedCells">
+ <summary>
+ Dictionnaire des cellules sélectionnées avec le nom de la compagnie
+ et les numéros des colonnes de la ligne sélectionnées
+ </summary>
+</member>
+<member name="F:WindowsApplication1.Action.BaseAction.commentHasChanged">
+ <summary>
+ Indique si un changement à de commentaire a eu lieu
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.BaseAction_Load(System.Object,System.EventArgs)">
+ <summary>
+ Load de l'ihm
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.ImportationToolStripMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ Click sur le menu importation d'un nouveau fichier
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.Preview(System.Boolean,System.Drawing.Font,System.Drawing.Color)">
+ <summary>
+ Preview de TOUTES les impressions
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.ValeurAnalyseBlend">
+ <summary>
+ Met à jour l'onglet valeur/analyse
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.clearGrid(System.Windows.Forms.DataGridView)">
+ <summary>
+ Clear datagrid content and remove added columns.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.addColumnSeparator(System.Windows.Forms.DataGridView,System.Int32,System.Boolean)">
+ <summary>
+ Ajoute une colonne vide en guise de séparateur dans grid à l'index pos.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.setFormatFromRoot(System.Windows.Forms.DataGridView,System.String,System.Drawing.Color)">
+ <summary>
+ Color each column in grid according to its root.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.Color_quintile(System.Windows.Forms.DataGridView,System.String,System.Collections.Generic.List{System.String})">
+ <summary>
+ Color each row's cell according to its quintile.
+ </summary>
+ <param name="col_quint">The Quintil column's name</param>
+ <param name="columns">The column list to color</param>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.getValeurColonneNotes(System.String)">
+ <summary>
+ Récupère les colonnes associées à un secteur FGA
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.computeTotalNotes(System.String,System.Collections.Generic.List{System.Windows.Forms.DataGridViewRow})">
+ <summary>
+ Calcul les notes totales de datagrid.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.computeNoteRowTotal(System.Windows.Forms.DataGridViewRow,System.Collections.Generic.Dictionary{System.String,System.Double},System.Nullable{System.Double}@)">
+ <summary>
+ Calcul la note total d'une ligne et retourne les colonnes où la note n'est pas reconnue.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.IsNote(System.Char)">
+ <summary>
+ Retourne Vrai si un caractere est reconnu en tant que note qualitative.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.getNoteValue(System.String)">
+ <summary>
+ Renvoie la valeur d'une note passée sous forme de chaîne.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.IsSaveNote(System.Windows.Forms.DataGridViewCell)">
+ <summary>
+ Compute new cell's total note and return true if total changed.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.askForSave">
+ <summary>
+ Ouvre une nouvelle fenêtre pour demander confirmation de sauvegarde
+ </summary>
+ <returns>La valeur de l'action</returns>
+ <remarks>annuler:-1, Oui:0, Non:1</remarks>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.fillSecteurRecoHisto">
+ <summary>
+ Changement de secteur pour afficher les détails
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.ColoriageRecoHisto(System.Windows.Forms.DataGridView,System.Boolean)">
+ <summary>
+ Colorie la grille avec le code couleur des secteurs et colorie la colonne recommandation en fonction du signe.
+ </summary>
+ <param name="DataGrid">La grille à colorier</param>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.BExcelGarp_Click(System.Object,System.EventArgs)">
+ <summary>
+ BExcelGarp : Exporte la grille DGarp vers Excel
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.BDeleteGarp_Click(System.Object,System.EventArgs)">
+ <summary>
+ BDeleteGarp : Vide la grille DGarp
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.DataGridView_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+ <summary>
+ gestion des sélections après un tri.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.DataGridView_CurrentCellChanged(System.Object,System.EventArgs)">
+ <summary>
+ Met à jour les autres grilles lorsque la sélection actuelle change.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.getCellValue(System.Windows.Forms.DataGridViewRow,System.String,System.Boolean)">
+ <summary>
+ Récupère la valeur d'une cellule
+ </summary>
+ <param name="row">la ligne contenant la cellule</param>
+ <param name="col_name">le nom de la colonne</param>
+ <param name="prefixed">Si vrai, un prefixe est ajouté aux champs ICB et FGA</param>
+ <returns>la valeur de la cellule à la ligne "row" dans la colonne "col_name"</returns>
+ <remarks>Les valeurs ICB et FGA sont respectivement préfixées par "ICB_" et "FGA_" si prefixed est vrai.</remarks>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.selectRow(System.Windows.Forms.DataGridView)">
+ <summary>
+ sélectionne une ligne entière.
+ </summary>
+ <param name="grid">la grille contenant la ligne.</param>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.InitSelectedCells(System.Windows.Forms.DataGridView)">
+ <summary>
+ Ajoute les lignes sélectionnées dans selectedCells.
+ </summary>
+ <param name="grid">La grille contenant les cellules sélectionnées.</param>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.selectCells(System.String,System.Windows.Forms.DataGridViewRow)">
+ <summary>
+ Sélectionne les cellules sauvegardées dans selectedCells
+ </summary>
+ <param name="name">le nom de la cellule correspondant à la clé dans selectedCells</param>
+ <param name="row">La ligne de la cellule</param>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.selectCellsInRow(System.Windows.Forms.DataGridViewRow)">
+ <summary>
+ Sélectionne une ligne entière
+ </summary>
+ <param name="row">La ligne à sélectionner</param>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.getColumnName(System.Windows.Forms.DataGridView,System.Collections.Generic.List{System.String})">
+ <summary>
+ Récupère le nom d'une colonne
+ </summary>
+ <param name="grid">La grille contenant la colonne</param>
+ <param name="names">Les différents noms possibles pour la colonne</param>
+ <returns>Le nom correspondant à la colonne si trouvée, sinon Nothing.</returns>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.SelectedValueChanged(System.Windows.Forms.ComboBox)">
+ <summary>
+ CbSuperSector : binde le bon secteur FGA, met à jour la grille Valeurs/Analyse 
+ et charge les commentaires associés au super secteur
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.refreshOldCBValue">
+ <summary>
+ Met à jour les anciennes valeurs des différentes combobox
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.DataGridView_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+ <summary>
+ Evenement sur click simple de souris.
+ </summary>
+ <remarks>Tri descendant sur la grille pour un clic droit sur un header de colonne</remarks>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.DValeurBlend_Sorted(System.Object,System.EventArgs)">
+ <summary>
+ Colorie les quintils après tri sur grille.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.fillCBSecteurs(System.Windows.Forms.DataGridViewCell)">
+ <summary>
+ Remplit les combobox de secteurs en fonction de la cellule sélectionnée
+ </summary>
+ <param name="cell">cellule sélectionnée</param>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.AfficheSynthese(System.String,System.String)">
+ <summary>
+ Affiche les supersecteurs ou secteurs.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.setICBFGAValeur(System.String,System.String,System.String)">
+ <summary>
+ Met à jour les différentes combobox de secteurs et valeur
+ </summary>
+ <param name="icb">la valeur du champ ICB</param>
+ <param name="fga">la valeur du champ FGA</param>
+ <param name="valeur">la valeur du champ Valeur</param>
+ <remarks>Si une valeur de champ est invalide, la combobox ne mettre pas à jour ce champ.
+ Ceci garantie la bonne association des secteurs.</remarks>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.BSave_Click(System.Object,System.EventArgs)">
+ <summary>
+ Sauvegarde les messages des commentaires et des recommandations
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.refreshGrid">
+ <summary>
+ Recharge les grilles en fonction de l'onglet actuellement sélectionné
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseAction.deleteCellContent(System.Windows.Forms.DataGridView)">
+ <summary>
+ Supprime le contenu d'une cellule qui n'est pas en ReadOnly.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseActionImportation.BaseActionImportation_Load(System.Object,System.EventArgs)">
+ <summary>
+ Load de l'ihm
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseActionImportation.Rafraichir">
+ <summary>
+ Rafraichir : binde les composants graphiques
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseActionImportation.CbFactSet_Click(System.Object,System.EventArgs)">
+ <summary>
+ CbFactSet_Click : ajout les fichiers dans le combobox
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseActionImportation.CbFactSet_SelectedValueChanged(System.Object,System.EventArgs)">
+ <summary>
+ CbFactSet_SelectedValueChanged : check si la base est pleine 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseActionImportation.BVider_Click(System.Object,System.EventArgs)">
+ <summary>
+ CbVider_Click : supprimer les données de ACT_DATA_FACSET, ACT_DATA_FACSET_COEF
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseActionImportation.BAjouter_Click(System.Object,System.EventArgs)">
+ <summary>
+ BAjouter_Click : ajout les fichiers dans le combobox
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseActionImportation.CbDateCoef_SelectedValueChanged(System.Object,System.EventArgs)">
+ <summary>
+ CbDateCoef_SelectedValueChanged : binder la DataGridViewCoef
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseActionImportation.BaseActionImportation_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+ <summary>
+ BaseActionImportation_FormClosing : binder la DataGridViewLiquidity
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseActionImportation.CbDateLiquidity_SelectedValueChanged(System.Object,System.EventArgs)">
+ <summary>
+ CbLiquidity_SelectedValueChanged : binder la DataGridViewLiquidity
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseActionImportation.CbDateIsr_SelectedIndexChanged(System.Object,System.EventArgs)">
+ <summary>
+ CbIsr_SelectedIndexChanged : binder DIsr
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseActionImportation.BExcel_Click(System.Object,System.EventArgs)">
+ <summary>
+ BExcel_Click : ajouter liquidity en base
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseActionImportation.batchImportation(System.String[])">
+ <summary>
+ Simuler une importation d un fichier factset
+ </summary>
+</member>
+<member name="T:WindowsApplication1.Action.BaseActionRecommandation">
+<summary>
+BaseActionRecommandation
+</summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseActionRecommandation.createDico(System.Collections.Generic.List{System.String})">
+ <summary>
+ Créé et rempli un dictionnaire à partir d'une liste de valeur en suivant les headers de grid.
+ </summary>
+ <param name="list">La liste des valeurs pour remplir le dictionnaire</param>
+ <returns>Le dictionnaire</returns>
+ <remarks>Si la liste contient moins de champs que le nombre de header, les dernieres valeurs associées aux headers restant seront vides seront vides</remarks>
+</member>
+<member name="F:WindowsApplication1.Action.BaseActionRecommandation.Recommandation._fields">
+ <summary>
+ Associe à chaque header sa valeur
+ </summary>
+</member>
+<member name="F:WindowsApplication1.Action.BaseActionRecommandation.Recommandation._buttons">
+ <summary>
+ Liste des radioButtons associés à la recommandation
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Action.BaseActionRecommandation.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:WindowsApplication1.Action.HelpWindowAction">
+<summary>
+HelpWindowAction
+</summary>
+</member>
+<member name="M:WindowsApplication1.Action.HelpWindowAction.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:WindowsApplication1.PrintPreviewTest">
+<summary>
+PrintPreviewTest
+</summary>
+</member>
+<member name="M:WindowsApplication1.PrintPreviewTest.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:WindowsApplication1.WpfPrint">
+ <summary>
+ Various helpers for printing WPF UI to a printer
+ </summary>
+</member>
+<member name="T:WindowsApplication1.WpfPrint.ElementFlags">
+ <summary>
+ Element flags define the way the elements print; OR them for multiple effects
+ </summary>
+</member>
+<member name="F:WindowsApplication1.WpfPrint.ElementFlags.None">
+ <summary>No special flags</summary>
+</member>
+<member name="F:WindowsApplication1.WpfPrint.ElementFlags.NewLine">
+ <summary>Move to the next line after output</summary>
+</member>
+<member name="F:WindowsApplication1.WpfPrint.ElementFlags.BottomCheck2">
+ <summary>if there isn't 2x room, then do new page first</summary>
+</member>
+<member name="F:WindowsApplication1.WpfPrint.ElementFlags.HorzCenter">
+ <summary>Center the item horizontally</summary>
+</member>
+<member name="F:WindowsApplication1.WpfPrint.ElementFlags.HorzRight">
+ <summary>Right align the item (center overrides)</summary>
+</member>
+<member name="P:WindowsApplication1.WpfPrint.CurrentFontFamily">
+ <summary>Current font family used for known objects</summary>
+</member>
+<member name="P:WindowsApplication1.WpfPrint.CurrentFontSize">
+ <summary>Current font size used for known objects</summary>
+</member>
+<member name="P:WindowsApplication1.WpfPrint.CurrentFontWeight">
+ <summary>Current font weight used for known objects</summary>
+</member>
+<member name="P:WindowsApplication1.WpfPrint.CurrentFontStyle">
+ <summary>Current font style used for known objects</summary>
+</member>
+<member name="P:WindowsApplication1.WpfPrint.CurrentElementMargin">
+ <summary>Current margin for known objects</summary>
+</member>
+<member name="P:WindowsApplication1.WpfPrint.CurrentElementBackground">
+ <summary>Current background for known objects</summary>
+</member>
+<member name="P:WindowsApplication1.WpfPrint.CurrentElementForeground">
+ <summary>Current foreground for known objects</summary>
+</member>
+<member name="P:WindowsApplication1.WpfPrint.CurrentFixedDocument">
+ <summary>Gets the current fixed document being worked on</summary>
+</member>
+<member name="P:WindowsApplication1.WpfPrint.CurX">
+ <summary>The current horizontal position</summary>
+</member>
+<member name="P:WindowsApplication1.WpfPrint.CurY">
+ <summary>The current vertical position</summary>
+</member>
+<member name="P:WindowsApplication1.WpfPrint.MarginX">
+ <summary>The starting and ending X margins on the page</summary>
+</member>
+<member name="P:WindowsApplication1.WpfPrint.MarginY">
+ <summary>The starting and ending Y margins on the page</summary>
+</member>
+<member name="P:WindowsApplication1.WpfPrint.PageSizeUsed">
+ <summary>Gets the page size for the document minus the margins</summary>
+</member>
+<member name="M:WindowsApplication1.WpfPrint.#ctor(System.Printing.PrintQueue,System.Printing.PrintTicket)">
+ <summary>
+ Constructor for printing
+ </summary>
+ <param name="printQueue"></param>
+ <param name="printTicket"></param>
+</member>
+<member name="M:WindowsApplication1.WpfPrint.#ctor(System.Windows.Size)">
+ <summary>
+ Constructor for XPS creation
+ </summary>
+ <param name="sz"></param>
+</member>
+<member name="M:WindowsApplication1.WpfPrint.StartPage">
+ <summary>
+ Add a new page to the document (start a new page)
+ </summary>
+</member>
+<member name="M:WindowsApplication1.WpfPrint.AddUIElement(System.Windows.UIElement,WindowsApplication1.WpfPrint.ElementFlags)">
+ <summary>
+ Adds a new element at the current position, and updates the current position
+ </summary>
+ <param name="element">New element to add</param>
+ <param name="flags">Print options</param>
+</member>
+<member name="M:WindowsApplication1.WpfPrint.AddTextBlock(System.String,System.Double,System.Double,WindowsApplication1.WpfPrint.ElementFlags)">
+ <summary>
+ Add a current style TextBlock element at the current position
+ </summary>
+ <param name="text">Text to add</param>
+ <param name="width">Width of element</param>
+ <param name="height">Height of element</param>
+ <param name="flags">Print options</param>
+</member>
+<member name="M:WindowsApplication1.WpfPrint.AddTextBox(System.String,System.Double,System.Double,WindowsApplication1.WpfPrint.ElementFlags)">
+ <summary>
+ Adds a current style TextBox element at the current position
+ </summary>
+ <param name="text">Text to add</param>
+ <param name="width">Width of element</param>
+ <param name="height">Height of element</param>
+ <param name="flags">Print options</param>
+</member>
+<member name="M:WindowsApplication1.WpfPrint.AddCheckBox(System.Boolean,System.Double,System.Double,WindowsApplication1.WpfPrint.ElementFlags)">
+ <summary>
+ Add a current style CheckBox element at the current position
+ </summary>
+ <param name="value">Checkbox value to add</param>
+ <param name="width">Width of element</param>
+ <param name="height">Height of element</param>
+ <param name="flags">Print options</param>
+</member>
+<member name="M:WindowsApplication1.ExportExcel.ConvertToDatatable``1(System.Collections.Generic.IList{``0},System.Int32@)">
+ <summary>
+ methode qui permet de generer une System.Data.DataTable à partir d une liste d objet de type T
+ Ce type T peut être une structure de plusieurs types/classe utilisateurs(Vue) et aussi de Dictionnay(String,String)
+ </summary>
+ <typeparam name="T"></typeparam>
+ <param name="list"></param>
+ <param name="profondeur"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.ExportExcel.ExportToExcel(System.Data.DataSet,System.String)">
+ <summary>
+ Utilitaire permettant de prendre une DataSet ( dataset étant une ou plusieurs DataTable)
+ </summary>
+ <param name="dataSet"></param>
+ <param name="outputPath"></param>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.ExportExcel.FillDataTable(System.Data.DataRow@,System.Data.DataTable@,System.Object@,System.Type,System.Int32@)">
+ <summary>
+ Alimente une ligne d un tableau (row) de manière recursive (avec la protextion d un compteur: profondeur)
+ 
+ </summary>
+ <param name="row">la ligne courante, avec </param>
+ <param name="table"></param>
+ <param name="item"></param>
+ <param name="TypeColumn"></param>
+ <param name="profondeur"></param>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.ExportExcel.BuildDataTableColumns(System.Data.DataTable@,System.Type,System.Int32)">
+ <summary>
+ Construit la structure de la table (metadata) avec une classe ou un dictionnary(String, String)
+ </summary>
+ <param name="table"></param>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.ExportExcel.GetExportableType(System.Type@)">
+ <summary>
+ Retourne le type affichage pour un type comme Nullable(Of) 
+ </summary>
+ <param name="t1"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.AllocationGrille.InitilisationListIndice(System.Collections.Generic.List{System.Collections.Generic.List{System.String}}@)">
+ <summary>
+ Initialisation d'une liste dans laquelle on lui insère les indices de références
+ </summary>
+ <param name="MaList"></param>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.AllocationGrille.CalculPerf_Click(System.Object,System.EventArgs)">
+ <summary>
+ Démarre les différents calculs
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.AllocationGrille.Radio_Bloom_CheckedChanged(System.Object,System.EventArgs)">
+ <summary>
+ Se produit lorsque l'on change le nom du ptf 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.AllocationGrille.PilotageCalcul">
+ <summary>
+ Permets de démarrer les calculs de performances en temps réel ou entre 2 dates 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.AllocationGrille.refreshBold(System.Int32,System.Int32)">
+ <summary>
+ Cette fonction calcule la somme des différentes poches (Actions, Oblig, Monétaire) 
+ Ces lignes seront en gras
+ </summary>
+ <param name="noAction"></param>
+ <param name="noOblig"></param>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.AllocationGrille.RechercheDonnéesAncienneBloom(System.DateTime)">
+ <summary>
+ Recherche des données historiques de bloomberg
+ La date correspond à la date la plus récente la table Strat_valeur_Indice
+ </summary>
+ <param name="DateRecherche"></param>
+ <returns>Liste des indices reférence et leur valeur associée </returns>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.AllocationGrille.RechercheCoursTempsReel(System.Collections.Generic.List{System.Collections.Generic.List{System.String}}@)">
+ <summary>
+ 'Fonction de connexion à Bloom et de récupération des derniers cours dans Bloomberg
+ </summary>
+ <param name="Resultat"></param>
+ <returns>
+ True si on récupérer TOUTES les valeurs
+ False sinon (pb de connexion, titre introuvable...
+ </returns>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.AjouterSignature.frmSample_Load(System.Object,System.EventArgs)">
+ <summary>
+ Load de la frame
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.AjouterSignature.BCréer_Click(System.Object,System.EventArgs)">
+ <summary>
+ BCréer : ajout une nouvelle signature en base
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.AjouterSignature.CbSousSecteur_SelectedIndexChanged(System.Object,System.EventArgs)">
+ <summary>
+ CbSousSecteur : derniere recommandation sous secteur
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.AjouterSignature.CbPays_SelectedIndexChanged(System.Object,System.EventArgs)">
+ <summary>
+ CbPays : derniere recommandation pays
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.AjouterSignature.CbSecteur_SelectedValueChanged(System.Object,System.EventArgs)">
+ <summary>
+ CbSecteur : peupler sous secteur
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.AjouterSignature.AjoutSignature_Resize(System.Object,System.EventArgs)">
+ <summary>
+ Resize de l'ihm
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.AjouterSignature.AjouterSignature_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+ <summary>
+ Ouvrir baseEmetteur et fermer Me
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.AjouterSignature.BPolice_Click(System.Object,System.EventArgs)">
+ <summary>
+ BPolice :  changement police de commentaire
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.BaseEmetteurs_Load(System.Object,System.EventArgs)">
+ <summary>
+ load de l'ihm
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.GetNetworkFolders(System.Windows.Forms.FolderBrowserDialog)">
+ <summary>
+ This function will get the Folderdialog as parameter and return the Selected
+ Folders UNC path. 
+ Ex: \\Server1\TestFolder
+ </summary>
+ <param name="oFolderBrowserDialog"></param>
+ <returns>it will return the Selected Folders UNC Path</returns>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.BChemin_Click(System.Object,System.EventArgs)">
+ <summary>
+ BChemin : Changer le chemin de la racine de la BDD
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.Tlibelle_TextChanged(System.Object,System.EventArgs)">
+ <summary>
+ Tlibelle : Load de la frame
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.BCharger_Click(System.Object,System.EventArgs)">
+ <summary>
+ BCharger : charge une signature de TX_SIGNATURE
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.Preview(System.Boolean,System.Drawing.Font,System.Drawing.Color)">
+ <summary>
+ Preview de TOUTES les impressions
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.myPrintDocument_PrintPage(System.Object,System.Drawing.Printing.PrintPageEventArgs)">
+ <summary>
+ Impression
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.BaseEmetteurs_Resize(System.Object,System.EventArgs)">
+ <summary>
+ Resize de l'ihm
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.BRafraichir_Click(System.Object,System.EventArgs)">
+ <summary>
+ Bouton BRafraichir : check différence base et disc
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.BAjouter_Click(System.Object,System.EventArgs)">
+ <summary>
+ BAjouter : ajoute les fichiers non enregistrés en base
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.DataGridFile_DoubleClick(System.Object,System.EventArgs)">
+ <summary>
+ DataGridFile : ouvre fichier archivé
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.DataGridNewFile_DoubleClick(System.Object,System.EventArgs)">
+ <summary>
+ DataGridNewFile : ouvre fichier archivé
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.Rafraichir">
+ <summary>
+ Rafraichie toutes les datagrilles de l'ihm
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.DataGridNewFile_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+ <summary>
+ DataGridNewFile : supprime fichier du disque
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.CréerSignatureToolStripMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ Ouvre AjoutSignature
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.RecommandationSecteurToolStripMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ Ouvre RecommandationSecteur
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.RecommandationPaysToolStripMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ Ouvre RecommandationPays
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.DataGridFile_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+ <summary>
+ DataGridFile : supprime un fichier archivé (disque + base)
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.DataGridFile_CellValueChanged(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+ <summary>
+ DataGridFile : Récupere les changement dans la grille
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.DataGridFile_CellBeginEdit(System.Object,System.Windows.Forms.DataGridViewCellCancelEventArgs)">
+ <summary>
+ DataGridFile : Mémorise l'ancien nom du ficher
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.BRafraichirOmega_Click(System.Object,System.EventArgs)">
+ <summary>
+ BRafraichirOmega : remplie la table TMP_SIGNATURE_OMEGA
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.BCreer_Click(System.Object,System.EventArgs)">
+ <summary>
+ BCréer : ajoute une signature OMEGA dans la base
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.DataGridNewFile_CellValueChanged(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+ <summary>
+ DataGridNewFile : renome les fichiers
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.DataGridNewFile_CellBeginEdit(System.Object,System.Windows.Forms.DataGridViewCellCancelEventArgs)">
+ <summary>
+ DataGridNewFile : sauvegarde l'ancien non des fichiers
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.BaseEmetteurs.BPrint_Click_1(System.Object,System.EventArgs)">
+ <summary>
+ Bouton BPrint : imprime une des 3 datatgrildview
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.Revue.Rafraichir">
+ <summary>
+ Rafraichir : binde les composants graphiques
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.ModificationSignature.ModificationSignature_Load(System.Object,System.EventArgs)">
+ <summary>
+ Load de l'ihm
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.ModificationSignature.maj_libelle(System.String)">
+ <summary>
+ Affiche le libellé choisi
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.ModificationSignature.BChanger_Click(System.Object,System.EventArgs)">
+ <summary>
+ BChanger : refresh signature dans la base
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.ModificationSignature.CbSecteur_SelectedValueChanged(System.Object,System.EventArgs)">
+ <summary>
+ CbSecteur : proposer les bons sous secteurs
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.ModificationSignature.BSupprimer_Click(System.Object,System.EventArgs)">
+ <summary>
+ BSuprimer : suprimme signature base + disque
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.ModificationSignature.ModificationSignature_Resize(System.Object,System.EventArgs)">
+ <summary>
+ Resize de l'ihm
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.ModificationSignature.ModificationSignature2_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+ <summary>
+ Ouvre ihm BaseEmetteur
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.ModificationSignature.CbSousSecteur_SelectedIndexChanged(System.Object,System.EventArgs)">
+ <summary>
+ CbSousSecteur : Récupere derniere recommandation secteur
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.ModificationSignature.CbPays_SelectedIndexChanged(System.Object,System.EventArgs)">
+ <summary>
+ CbPays : Récupere derniere recommandation pays
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.ModificationSignature.DataGridFile_DoubleClick(System.Object,System.EventArgs)">
+ <summary>
+ Ouvre fichier 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.ModificationSignature.DataGridFile_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+ <summary>
+ Supprime fichier disque + base
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.ModificationSignature.DataGridFile_CellValueChanged(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+ <summary>
+ Update la base fichier
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.ModificationSignature.TNote_TextChanged(System.Object,System.EventArgs)">
+ <summary>
+ Filtre TNotre DataGridFichier
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.ModificationSignature.TNom_TextChanged(System.Object,System.EventArgs)">
+ <summary>
+ Filtre TNom DataGridFichier
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.ModificationSignature.TEmetteur_TextChanged(System.Object,System.EventArgs)">
+ <summary>
+ Filtre TEmetteur DataGridFichier
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.ModificationSignature.TLogin_TextChanged(System.Object,System.EventArgs)">
+ <summary>
+ Filtre TLogin DataGridFichier
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.ModificationSignature.DatePicker_ValueChanged(System.Object,System.EventArgs)">
+ <summary>
+ Filtre DatePicker dataGridFichier
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.ModificationSignature.BImpression_Click(System.Object,System.EventArgs)">
+ <summary>
+ BImpression : imprime TCommentaire
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.RecommandationPays.Form1_Load(System.Object,System.EventArgs)">
+ <summary>
+ Load de l'ihm
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.RecommandationPays.CbPays_Click(System.Object,System.EventArgs)">
+ <summary>
+ Clique sur CbPays
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.RecommandationPays.CbPays_SelectedIndexChanged(System.Object,System.EventArgs)">
+ <summary>
+ Changement de valeur sur CbPays
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.RecommandationPays.BChanger_Click(System.Object,System.EventArgs)">
+ <summary>
+ Bouton modification recommandation pays
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.RecommandationPays.TCommentaire_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+ <summary>
+ Click sur TCommentaire
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.RecommandationPays.RecommandationPays_Resize(System.Object,System.EventArgs)">
+ <summary>
+ Rezise l'ihm automatiquement
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.RecommandationPays.BCréer_Click(System.Object,System.EventArgs)">
+ <summary>
+ Bouton créer un nouveau pays
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.RecommandationPays.RecommandationPays_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+ <summary>
+ Recharger BaseEmetteurs
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.RecommandationSecteur.RecommendationSousSecteur_Load(System.Object,System.EventArgs)">
+ <summary>
+ Load de l'ihm
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.RecommandationSecteur.CbSousSecteur_Click(System.Object,System.EventArgs)">
+ <summary>
+ Click CbSousSecteur
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.RecommandationSecteur.CbSecteur_Click(System.Object,System.EventArgs)">
+ <summary>
+ Click CbSecteur
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.RecommandationSecteur.BCréerSousSecteur_Click(System.Object,System.EventArgs)">
+ <summary>
+ Click BCréerSousSecteur
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.RecommandationSecteur.BRecommandation_Click(System.Object,System.EventArgs)">
+ <summary>
+ Click BRecommandation
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.RecommandationSecteur.CbSousSecteur_SelectedIndexChanged(System.Object,System.EventArgs)">
+ <summary>
+ CbSousSecteur change
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.BaseEmetteurs.RecommandationSecteur.RecommandationSecteur_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+ <summary>
+ Refresh l'écran d'accueil des signatures
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.Iboxx_Load(System.Object,System.EventArgs)">
+ <summary>
+ Load de l'ihm
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.CbFin_Click(System.Object,System.EventArgs)">
+ <summary>
+ CbFin : click dynamique
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.CbDébut_Click(System.Object,System.EventArgs)">
+ <summary>
+ CbDébut : click dynamique
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.Iboxx_Resize(System.Object,System.EventArgs)">
+ <summary>
+ Resize de l'ihm
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.sqlAggre(System.DateTime)">
+ <summary>
+ sqlAggre : Binde la DataGridViewAggr 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.GetFiltre">
+ <summary>
+ GetFiltre : remplie 2 List en fonction des filtres 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.sqlIboxx(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})">
+ <summary>
+ GetFiltre : remplie 2 List en fonction des filtres 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.CbLevel4_Click(System.Object,System.EventArgs)">
+ <summary>
+ CbLevel4 : click dynamique 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.CbPays_Click(System.Object,System.EventArgs)">
+ <summary>
+ CbPays : click dynamique 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.CbTier_Click(System.Object,System.EventArgs)">
+ <summary>
+ CbTier : click dynamique 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.CbRating_Click(System.Object,System.EventArgs)">
+ <summary>
+ CbRating : click dynamique 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.CbDebt_Click(System.Object,System.EventArgs)">
+ <summary>
+ CbDebt : click dynamique 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.BExcel_Click(System.Object,System.EventArgs)">
+ <summary>
+ BExcel : écrire DataGridIboxx dans .csv
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.BRapport_Click(System.Object,System.EventArgs)">
+ <summary>
+ BRapport : étude différence Iboxx et Prime Oblig 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.PresentationRapport(System.String,System.DateTime)">
+ <summary>
+ Refaire la présentation du fichier excel
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.BBloomberg_Click(System.Object,System.EventArgs)">
+ <summary>
+ BBloomberg : écrit dans un fichier excel les oblig en commun entre prime oblig et l'iboxx 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.BGEffacer_Click(System.Object,System.EventArgs)">
+ <summary>
+ BEffacer : efface tous les filtres 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.BGCharger_Click(System.Object,System.EventArgs)">
+ <summary>
+ BGCharger_Click : remplit les deux datagrid de l'onglet principale
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.BPEffacer_Click(System.Object,System.EventArgs)">
+ <summary>
+ BPEffacer_Click : Vide tous les composants de l'onglet principale
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.BPCharger_Click(System.Object,System.EventArgs)">
+ <summary>
+ BPCharger_Click : remplit tous les composants de l'onglet péridoe
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.BAEffacer_Click(System.Object,System.EventArgs)">
+ <summary>
+ BAEffacer_Click : Vide tous les composants de l'onglet période
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.BACharger_Click(System.Object,System.EventArgs)">
+ <summary>
+ BAEffacer_Click : Vide tous les composants de l'onglet période
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.BPeCharger_Click(System.Object,System.EventArgs)">
+ <summary>
+ BPeCharger_Click : attribution de performance
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.BPeEffacer_Click(System.Object,System.EventArgs)">
+ <summary>
+ BAEffacer_Click : Vider ihm performance
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.BExcelASM_Click(System.Object,System.EventArgs)">
+ <summary>
+ BExcelASM_Click : Mettre DataGridASM dans excel
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Taux.PrimeObligIboxx.Iboxx.BExcelPerf_Click(System.Object,System.EventArgs)">
+ <summary>
+ BExcelPerf_Click : Mettre DataGridAttributionSecteur dans excel
+ </summary>
+</member>
+<member name="M:WindowsApplication1.AjoutLot.AjoutLot_Load(System.Object,System.EventArgs)">
+ <summary>
+ Load de l'ihm
+ </summary>
+</member>
+<member name="M:WindowsApplication1.AjoutLot.RbGroupe_CheckedChanged(System.Object,System.EventArgs)">
+ <summary>
+ Bouton Groupe
+ </summary>
+</member>
+<member name="M:WindowsApplication1.AjoutLot.RbCompte_CheckedChanged(System.Object,System.EventArgs)">
+ <summary>
+ Bouton Compte 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.AjoutLot.BAjouter_Click(System.Object,System.EventArgs)">
+ <summary>
+ BAjouter : modifie ou ajoute un lot en base 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.AjoutLot.CbLibelleLot_SelectedIndexChanged(System.Object,System.EventArgs)">
+ <summary>
+ BbLibelleLot SelectedIndexChanged
+ </summary>
+</member>
+<member name="M:WindowsApplication1.AjoutLot.BSupprimer_Click_1(System.Object,System.EventArgs)">
+ <summary>
+ BSupprimer : supprime un lot de la base
+ </summary>
+</member>
+<member name="M:WindowsApplication1.AjoutLot.CbLibelleLot_Click(System.Object,System.EventArgs)">
+ <summary>
+ BbLibelleLot Click
+ </summary>
+</member>
+<member name="T:WindowsApplication1.FileLink.BaseActionCopyFile">
+<summary>
+BaseActionCopyFile
+</summary>
+</member>
+<member name="M:WindowsApplication1.FileLink.BaseActionCopyFile.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:WindowsApplication1.FileLink.BaseActionShowFile">
+<summary>
+BaseActionShowFile
+</summary>
+</member>
+<member name="M:WindowsApplication1.FileLink.BaseActionShowFile.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:WindowsApplication1.TreeViewMultiSelect">
+ <summary>
+ This is a TreeViewMultiSelect class I wrote. I have in my head an idea
+ for a better one that is based on a ListView, but I haven't had time to
+ write it. The idea for the ListView involves having a sub list of all
+ the tree structure passed in. Items are added and removed as nodes are
+ opened and closed. The sub list wraps the original objects with an object
+ that has an indentation property and the item styling indents according
+ to this property.
+ </summary>
+</member>
+<member name="F:WindowsApplication1.TreeViewMultiSelect._itemToSelectByPath">
+ <summary>
+ Used for selecting a node by item
+ </summary>
+</member>
+<member name="F:WindowsApplication1.TreeViewMultiSelect._previousItem">
+ <summary>
+ The previous item selected in multi-select
+ </summary>
+</member>
+<member name="F:WindowsApplication1.TreeViewMultiSelect._selectedTreeViewItems">
+ <summary>
+ The collection of selected TreeViewItems
+ </summary>
+</member>
+<member name="F:WindowsApplication1.TreeViewMultiSelect._selectedItems">
+ <summary>
+ The collection of selected data items
+ </summary>
+</member>
+<member name="F:WindowsApplication1.TreeViewMultiSelect._isSelectionChangeActiveProperty">
+ <summary>
+ Reflection property for setting a private property
+ </summary>
+</member>
+<member name="M:WindowsApplication1.TreeViewMultiSelect.#ctor">
+ <summary>
+ Constructor. Initializes class fields.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.TreeViewMultiSelect.SelectItem(System.Object)">
+ <summary>
+ Not implemented yet.
+ Better to use select item by path-chain, but this can be used to
+ select a data item. Does it really slowly, scan the data for the item,
+ gets the tree node chain to it, and selects it.
+ </summary>
+ <param name="userItemToSelect"></param>
+</member>
+<member name="M:WindowsApplication1.TreeViewMultiSelect.DeselectItem(System.Object)">
+ <summary>
+ Removes the item passed in to from the selected items
+ </summary>
+ <param name="itemToDeselect"></param>
+</member>
+<member name="M:WindowsApplication1.TreeViewMultiSelect.SelectItemByPath(System.Windows.Controls.ItemsControl@,System.Collections.IList)">
+ <summary>
+ Selects the first node in the tree view returns true if the
+ selection was successful or false if this needs to be called
+ again when the base.ItemContainerGenerator.StatusChanged event
+ is fired. Note if false is returned the same items control (which
+ will be modified as it'a a ref) needs to be passed in next time
+ to complete the selection.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:WindowsApplication1.TreeViewMultiSelect.AddTreeViewItemToSelection(WindowsApplication1.TreeViewItemMultiSelect)">
+ <summary>
+ Adds a tree view item to the multi-selection without going through
+ the normal event chain. Used only by TreeViewItemMultiSelect.
+ </summary>
+ <param name="newItem"></param>
+</member>
+<member name="M:WindowsApplication1.TreeViewMultiSelect.GetContainerForItemOverride">
+ <summary>
+ Gets an empty container for puting in the tree.
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:WindowsApplication1.TreeViewMultiSelect.OnSelectedItemChanged(System.Windows.RoutedPropertyChangedEventArgs{System.Object})">
+ <summary>
+ Handles when the selected item changes. Handles the multi-select functionality.
+ </summary>
+ <param name="e"></param>
+</member>
+<member name="P:WindowsApplication1.TreeViewMultiSelect.SelectedItems">
+ <summary>
+ Gets the collection of selected items
+ </summary>
+</member>
+<member name="P:WindowsApplication1.TreeViewMultiSelect.SelectedTreeViewItems">
+ <summary>
+ Gets the collection of selected items
+ </summary>
+</member>
+<member name="M:WindowsApplication1.TreeViewMultiSelect.ItemContainerGenerator_StatusChanged(System.Object,System.EventArgs)">
+ <summary>
+ Handles when a node gets expanded when we are waiting to select
+ a lower node.
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:WindowsApplication1.TreeViewMultiSelect.selectedTreeViewItems_CollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+ <summary>
+ Handles when the selected tree view items collections changes. Updates
+ the data item collection accordingly.
+ </summary>
+</member>
+<member name="F:WindowsApplication1.TreeViewItemMultiSelect.parentTreeView">
+ <summary>
+ The parent tree view control
+ </summary>
+</member>
+<member name="M:WindowsApplication1.TreeViewItemMultiSelect.#ctor(WindowsApplication1.TreeViewMultiSelect)">
+ <summary>
+ Constructor
+ </summary>
+ <param name="parentTreeView"></param>
+</member>
+<member name="M:WindowsApplication1.TreeViewItemMultiSelect.GetContainerForItemOverride">
+ <summary>
+ Generates controls that hold data in the treeview
+ </summary>
+</member>
+<member name="M:WindowsApplication1.TreeViewItemMultiSelect.OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)">
+ <summary>
+ Handles when the mouse down is clicked
+ </summary>
+</member>
+<member name="M:WindowsApplication1.DGrid.AutoFiltre(System.Windows.Forms.DataGridView,System.Collections.Generic.List{System.Int32})">
+ <summary>
+ Applique des filtres sur chaque colonne de la datagrille
+ </summary>
+</member>
+<member name="M:WindowsApplication1.DGrid.DataGridToNewExcelByPast(System.Windows.Forms.DataGridView,System.String)">
+ <summary>
+ Export une datagrid vers un nouveau fichier excel
+ </summary>
+</member>
+<member name="M:WindowsApplication1.DGrid.DataGridToNewExcel(System.Windows.Forms.DataGridView,System.String,System.Int32)">
+ <summary>
+ Export une datagrid vers un nouveau fichier excel
+ </summary>
+</member>
+<member name="M:WindowsApplication1.DGrid.DataGridsToNewExcel(System.Collections.Generic.List{System.Windows.Forms.DataGridView},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Int32},System.String)">
+ <summary>
+ Export DES datagrids vers un nouveau fichier excel
+ </summary>
+</member>
+<member name="M:WindowsApplication1.DGrid.DataGridToExcel(System.Windows.Forms.DataGridView,System.Windows.Forms.SaveFileDialog,System.Windows.Forms.Form)">
+ <summary>
+ Copier datagridview dans un fichier excel
+ </summary>
+</member>
+<member name="M:WindowsApplication1.DGrid.PresentationDataGrid(System.Windows.Forms.DataGridView,System.Int32)">
+ <summary>
+ Aligne les chifres à droites et les autres caractère à gauche
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Excel.LectureFichierExcel(System.String,System.String,System.Int32)">
+ <summary>
+ Lire un fichier excel
+ Indice Feuille == 1 si premiere feuille ...
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Excel.CellFichierExcel(System.String,System.String,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Lire un fichier excel
+ Indice Feuille == 1 si premiere feuille ...
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Excel.ExcelToSqlForSecteur(System.DateTime,System.String,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Exporter un fichier excel vers une base de données
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Excel.ExcelToSqlBulk(System.String,System.String,System.Int32,System.String,System.Collections.Generic.List{System.Int32},System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Exporter un fichier excel vers une base de données
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Excel.ExcelToSql(System.String,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Exporter un fichier excel vers une base de données
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Excel.ExcelToSqlUpdate(System.String,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Exporter un fichier excel vers une base de données et met à jour les champs existants.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Excel.ExcelBBGToSqlUpdate(System.String,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Importer un fichier excel avec des liens Bloomberg dans la base de données et met à jour les champs existants.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Excel.ExcelIboxxToSql(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Exporter un fichier excel vers une base de données
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Excel.PresentationExcel(System.String,System.Collections.Generic.List{System.String},System.Boolean)">
+ <summary>
+ Change les titres et les onglets
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Fichier.LectureFichierLog(System.String)">
+ <summary>
+ Permet de lire les caractéristiques du fichier de connection
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Fichier.LectureFichierTxt(System.String)">
+ <summary>
+ Permet de lire un fichier Txt
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Fichier.LectureFichierSql(System.String,System.String)">
+ <summary>
+ Permet de lire un fichier Sql en enlevant les lignes contenant --
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Fichier.Existe(System.String)">
+ <summary>
+ Vérifie si un fichier existe
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Dossier.CopyDirectory(System.IO.DirectoryInfo,System.IO.DirectoryInfo)">
+ <summary>
+ Copier le contenu d'un dossier
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Dossier.SupprimerDossier(System.String)">
+ <summary>
+ Supprimer contenu d'un dossier
+ </summary>
+</member>
+<member name="M:WindowsApplication1.ConnectionOmega.ToConnectOmega">
+ <summary>
+ Permet de se connecter à la base OMEGA
+ </summary>
+</member>
+<member name="M:WindowsApplication1.ConnectionOmega.ToDisconnectOmega">
+ <summary>
+ Permet de se déconnecter d'une base de donnée
+ </summary>
+</member>
+<member name="M:WindowsApplication1.ConnectionOmega.commandeSql(System.String,System.String,System.Boolean)">
+ <summary>
+ Execute une commande sql à partir  d'un Sting
+ </summary>
+</member>
+<member name="M:WindowsApplication1.ConnectionOmega.commandeSqlToList(System.String)">
+ <summary>
+ Execute une commande sql à partir  d'un Sting
+ </summary>
+</member>
+<member name="M:WindowsApplication1.ConnectionOmega.commandeSqlToListReturn(System.String)">
+ <summary>
+ Execute une commande sql à partir  d'un Sting
+ </summary>
+</member>
+<member name="M:WindowsApplication1.ConnectionOmega.LectureFichierSql(System.String)">
+ <summary>
+ Permet de lire un fichier Sql en enlevant les lignes contenant --
+ </summary>
+</member>
+<member name="M:WindowsApplication1.ConnectionOmega.LectureFichierSqlOrigine(System.String)">
+ <summary>
+ Permet de lire un fichier Sql tel quel
+ </summary>
+</member>
+<member name="M:WindowsApplication1.GridMenu.popContextMenu(System.Windows.Forms.DataGridViewCell)">
+ <summary>
+ Affiche le menu contextuel au niveau du curseur de la souris.
+ </summary>
+ <param name="cell">La cellule cliquée</param>
+</member>
+<member name="T:WindowsApplication1.PopupWindowSave">
+<summary>
+PopupWindowSave
+</summary>
+</member>
+<member name="F:WindowsApplication1.PopupWindowSave.res">
+ <summary>
+ Associe un numéro de retour pour chaque bouton.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.PopupWindowSave.getResult">
+ <summary>
+ Return le résultat
+ </summary>
+</member>
+<member name="M:WindowsApplication1.PopupWindowSave.setLocation">
+ <summary>
+ Modifie la valeur du label en spécifiant l'emplacement concerné.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.PopupWindowSave.closePopUp(System.Int32)">
+ <summary>
+ Met à jour la valeur du résultat puis ferme la fenêtre.
+ </summary>
+ <param name="result"></param>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.PopupWindowSave.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="M:WindowsApplication1.ModelPortfolio.newClickFga">
+ <summary>
+ Changement de secteur pour afficher les détails
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.ModelPortfolio.DRecoFga_DataBindingComplete(System.Object,System.Windows.Forms.DataGridViewBindingCompleteEventArgs)">
+ <summary>
+ Traitements lorsque la datagrid des DHistorique est chargée: présentation de la grille
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="T:WindowsApplication1.Ini">
+ <summary>
+ Caractéristique de conection au base Front et OMEGA
+ - serverName
+ - dataBaseName
+ - userNameBase / passwordBase
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Reconciliation.Reconciliation_Load(System.Object,System.EventArgs)">
+ <summary>
+ Load de l'ihm
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Reconciliation.RemplirChorus(System.DateTime)">
+ <summary>
+ Remplacer données PTF_CHORUS ?
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Reconciliation.RemplirFGA(System.DateTime)">
+ <summary>
+ Remplacer données PTF_FGA ? 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Reconciliation.BCharger_Click(System.Object,System.EventArgs)">
+ <summary>
+ BCharger : remplir les DataGrids
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Reconciliation.BExcel_Click(System.Object,System.EventArgs)">
+ <summary>
+ BExcel : envoyer les DataGrids vers Excel 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Reconciliation.BPrint_Click(System.Object,System.EventArgs)">
+ <summary>
+ BPrint : imprimer les DataGrids 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Reconciliation.BRefreshCorrespondance_Click(System.Object,System.EventArgs)">
+ <summary>
+ BRefreshCorrespondance : met à jours la table PTF_CHORUS_CORRESPONDANCE
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.GestionTable.Gestiontable_Load(System.Object,System.EventArgs)">
+ <summary>
+ Ihm ouverture
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.GestionTable.BRemplir_Click(System.Object,System.EventArgs)">
+ <summary>
+ BRemplir : remplit les caractéristique des portefeuilles 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.GestionTable.BViderA_Click(System.Object,System.EventArgs)">
+ <summary>
+ BVider : vide une table avec un where (date)
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.GestionTable.BToutVider_Click(System.Object,System.EventArgs)">
+ <summary>
+ BToutVider : vide une table ENTIEREMENT
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.GestionTable.PortefeuilleFGA(System.DateTime,System.String,System.String[])">
+ <summary>
+ Effectue une requete sur la base Omega pour remplir la table PTF_FGA(inventaire)  et PTF_AN (liste des actifs nets)
+ </summary>
+ <param name="datee">la date d extraction</param>
+ <param name="nomFichierPTF_FGA">le nom du fichier contenant la requete sql</param>
+ <param name="comptes">optionel: liste des comptes sur lequels la requete porte</param>
+ <remarks></remarks>
+         
+</member>
+<member name="M:WindowsApplication1.Referentiel.GestionTable.BAjoutA_Click(System.Object,System.EventArgs)">
+ <summary>
+ BAjoutA : transparise pour un niveau donnée et une date donnéé
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.GestionTable.BAjouter_Click(System.Object,System.EventArgs)">
+ <summary>
+ BAjouterLot : ouvre AjoutLot
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.GestionTable.Strip(System.String,System.String[])">
+ <summary>
+ Cette fonction supprime n'importe quel caractère du string strA passé en premier argument
+ exemple :
+ toto="azè-e(r(tè-y"
+ toto=Strip(toto,"(","è","-")
+ donne "azerty"
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.GestionTable.BAjoutA_MouseEnter(System.Object,System.EventArgs)">
+ <summary>
+ MouseEnter de BAjoutA
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.GestionTable.BToutVider_MouseEnter(System.Object,System.EventArgs)">
+ <summary>
+ MouseEnter de BToutVider
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.GestionTable.BViderA_MouseEnter(System.Object,System.EventArgs)">
+ <summary>
+ MouseEnter de BViderA
+ </summary>
+ 
+</member>
+<member name="M:WindowsApplication1.Referentiel.GestionTable.BRemplir_MouseEnter(System.Object,System.EventArgs)">
+ <summary>
+ MouseEnter de BRemplir
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.GestionTable.BRemplirGeneral_Click(System.Object,System.EventArgs)">
+ <summary>
+ BRemplirGeneral : ajoute des tables générales : secteur, zone géographique ....
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.GestionTable.BRefreshPays_Click(System.Object,System.EventArgs)">
+ <summary>
+ Bouton BRefreshPays : ajoute les nouveaux pays de OMEGA dans la base front
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.GestionTable.BRefreshSecteur_Click(System.Object,System.EventArgs)">
+ <summary>
+ BRefreshSecteur : ajoute les nouveaux secteur ou sous secteur de OMEGA dan sla base front
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.GestionTable.BTauxRemplir_Click(System.Object,System.EventArgs)">
+ <summary>
+ BTauxRemplir : ajoute des tables taux : recommandation, rating ....
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.GestionTable.BRefreshSignature_Click(System.Object,System.EventArgs)">
+ <summary>
+ BRefreshSignature : remplie une table temporaire avec toutes les infos des signatures OMEGA
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.GestionTable.iBoxx_SelectedValueChanged(System.Object,System.EventArgs)">
+ <summary>
+ iBoxx SelectedValueChanged : check si ajout possible dans base
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.GestionTable.iBoxx_Click(System.Object,System.EventArgs)">
+ <summary>
+ iBoxx Click
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.GestionTable.BRefreshRating_Click(System.Object,System.EventArgs)">
+ <summary>
+ BRefreshRating : re-remplie la table
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Transparence.Transparence_Load(System.Object,System.EventArgs)">
+ <summary>
+ Load de l'ihm transparence 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Transparence.BCharger_Click(System.Object,System.EventArgs)">
+ <summary>
+ BCharger : transparise et filtre si c'est possible
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Transparence.BVider_Click(System.Object,System.EventArgs)">
+ <summary>
+ BVider :  vide les composants graphiques
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Transparence.ToExcel2(System.Windows.Forms.DataGridView,System.Windows.Forms.DataGridView)">
+ <summary>
+ Exporte une data grille vers un fichier excel
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Transparence.BExcel_Click(System.Object,System.EventArgs)">
+ <summary>
+ BExcel : Exporter les données de la datagridSelect vers Excel
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Transparence.RbNiv0_CheckedChanged(System.Object,System.EventArgs)">
+ <summary>
+ Interdire a l'utilisateur certaine aggrégation si niveau 0
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Transparence.CbSecteur_Click(System.Object,System.EventArgs)">
+ <summary>
+ Remplie le composant CbSecteur en fonction des autres pré-remplie
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Transparence.CbSousSecteur_Click(System.Object,System.EventArgs)">
+ <summary>
+ Remplie le composant CbSousSecteur en fonction des autres pré-remplie
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Transparence.CbPays_Click(System.Object,System.EventArgs)">
+ <summary>
+ Remplie le composant CbPays en fonction des autres pré-remplie
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Transparence.CbTrancheMaturite_Click(System.Object,System.EventArgs)">
+ <summary>
+ Remplie le composant CbTrancheDeMaturité en fonction des autres pré-remplie
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Transparence.CbLotPortefeuille_Click(System.Object,System.EventArgs)">
+ <summary>
+ Remplie le composant CbLotPortefeuille
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Transparence.SelectDataGrid(System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object},System.String,System.Collections.Generic.List{System.Object})">
+ <summary>
+ Requete sql pour les filtres de la SelectDataGrid
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Transparence.AggrDataGrid(System.Collections.Generic.List{System.String},System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object},System.String,System.Collections.Generic.List{System.Object})">
+ <summary>
+ Requete sql pour l'aggregation de la AggrDataGrid
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Transparence.BPrint_Click_1(System.Object,System.EventArgs)">
+ <summary>
+ BPrint : imprime SelectDataGrid
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Transparence.BRapport_Click(System.Object,System.EventArgs)">
+ <summary>
+ BRapport : création rapport
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Referentiel.Transparence.PresentationMonitoring(System.String@,System.Collections.Generic.List{System.String}@)">
+ <summary>
+ Présentation rapport excel
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Email.checkMail(System.String)">
+ <summary>
+ Vérifie la synthaxe d'un email
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Email.checkConnection">
+ <summary>
+ Vérifie la connnection à internet
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Email.sendMail(System.String,System.String,System.String)">
+ <summary>
+ Envoie un email
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Helpers.DisplayRoundedNumber(System.String@,System.UInt32@,System.Char@)">
+ <summary>
+ Utilitaire pour la presentation de chiffres au format String
+ </summary>
+ <param name="numberAsString"> le chiffre à modifier</param>
+ <param name="nbAfterDot">nb de chiffre apres la virgule voulue </param>
+ <param name="separator"> </param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:WindowsApplication1.Watcher.Supervisor.#ctor(System.Object,System.Object)">
+ <summary>
+ Instancie le supervisor avec un seul watcher.
+ </summary>
+</member>
+<member name="P:WindowsApplication1.Watcher.Supervisor.HasChanged">
+ <summary>
+ Vérifie si un changement à eu lieu parmi les watchers du supervisor.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Watcher.Supervisor.update">
+ <summary>
+ Met à jour les changements sur tous les watchers.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Watcher.Supervisor.initWatchers(System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
+ <summary>
+ Méthode d'initialisation des watchers de la classe héritées
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Watcher.Supervisor.initWatcher``1(System.String,``0)">
+ <summary>
+ Ajoute un watcher au supervisor
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Watcher.Supervisor.getWatcher``1(System.String)">
+ <summary>
+ Récupère une donnée contenue dans un watcher
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Watcher.Supervisor.setWatcher``1(System.String,``0)">
+ <summary>
+ Met à jour le contenu d'un watcher et appelle OnPropertyChanged
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Watcher.Supervisor.updateWatcher(System.Object)">
+ <summary>
+ Met à jour le watcher spécifié.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Watcher.Supervisor.updateWatcher``1(System.String,``0)">
+ <summary>
+ Met à jour le contenu d'un watcher et met à jour ce changement.
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Watcher.Supervisor.WatcherHasChanged(System.String)">
+ <summary>
+ Return weither the watcher value has changed.
+ </summary>
+</member>
+<member name="T:WindowsApplication1.Utilisateur">
+ <summary>
+ Caractéristique d'un utilisateur
+ </summary>
+</member>
+<member name="M:WindowsApplication1.ModificationUtilisateur.Modification_Load(System.Object,System.EventArgs)">
+ <summary>
+ Initialisation de l'ihm
+ </summary>
+</member>
+<member name="M:WindowsApplication1.ModificationUtilisateur.BCancel_Click(System.Object,System.EventArgs)">
+ <summary>
+ Bouton cancel de l'ihm
+ </summary>
+</member>
+<member name="M:WindowsApplication1.ModificationUtilisateur.BAdd_Click(System.Object,System.EventArgs)">
+ <summary>
+ Bouton Update de l'ihm
+ </summary>
+</member>
+<member name="M:WindowsApplication1.ModificationUtilisateur.CbLogin_TextChanged(System.Object,System.EventArgs)">
+ <summary>
+ CbLogin
+ </summary>
+</member>
+<member name="M:WindowsApplication1.ModificationUtilisateur.checkMail(System.String)">
+ <summary>
+ Vérifie la valadité d'un mail
+ </summary>
+</member>
+<member name="M:WindowsApplication1.ScriptBDD.ScriptBDD_Load(System.Object,System.EventArgs)">
+ <summary>
+ Load de l'ihm pour lire le script de la bdd  
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.ToConnectBase">
+ <summary>
+ Permet de se connecter à une base de donnée
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.ToConnectBasebis">
+ <summary>
+ Permet de se connecter à une base de donnée
+ On ajoute cette fonction pour avoir une deuxieme connection et pouvoir exécuter des scripts SQL via des StreamReader
+ SelectColonneName utilise un streamReader
+ On a ainsi une variable cobase et cobasebis en tant que connection SQL 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.ToDisconnect">
+ <summary>
+ Permet de se déconnecter d'une base de donnée
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.RequeteSql(System.String)">
+ <summary>
+ Execute une requete sql sans return
+ </summary>    
+</member>
+<member name="M:WindowsApplication1.Connection.RequeteSqls(System.Collections.Generic.List{System.String})">
+ <summary>
+ Execute une requete sql sans return
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.RequeteBulk(System.Data.DataTable@,System.String)">
+ <summary>
+ Execute une requete en bulk sans return
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.ProcedureStockée(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})">
+ <summary>
+ Execute une procedure stockée sans return
+ </summary>    
+</member>
+<member name="M:WindowsApplication1.Connection.ProcedureStockéeForDataGrid(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})">
+ <summary>
+ Execute une procedure stockée avec return
+ </summary>   
+</member>
+<member name="M:WindowsApplication1.Connection.ProcedureStockéeDico(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})">
+ <summary>
+ Execute une procedure stockée avec return
+ </summary>    
+</member>
+<member name="M:WindowsApplication1.Connection.ProcedureStockéeList(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})">
+ <summary>
+ Execute une procedure stockée avec return
+ </summary>    
+</member>
+<member name="M:WindowsApplication1.Connection.SelectSimple(System.String,System.String)">
+ <summary>
+ Selectionne une colonne d'une table d'une bdd
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.SelectDistinctSimple(System.String,System.String,System.String)">
+ <summary>
+ Selectionne une colonne d'une table d'une bdd avec un distinct
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.SelectWhere(System.String,System.String,System.String,System.Object)">
+ <summary>
+ Selectionne une colonne d'une table d'une bdd avec 1 where
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.SelectWhere2(System.String,System.String,System.String,System.Object,System.String,System.Object,System.Int32,System.String)">
+ <summary>
+ Selectionne une colonne d'une table d'une bdd avec une double condition where
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.SelectWhereNotNull(System.String,System.String,System.String)">
+ <summary>
+ Selectionne une colonne d'une table d'une bdd avec une condition where IS NOT NULL
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.SelectDoubleWhereNotNull(System.String,System.String,System.String,System.Object,System.String,System.Int32)">
+ <summary>
+ Selectionne une colonne d'une table d'une bdd avec une condition where et un deuxieme chanps non vide
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.SelectDistinctWhere(System.String,System.String,System.String,System.Object,System.String,System.String)">
+ <summary>
+ Selectionne distinct une colonne d'une table d'une bdd avec 1 where
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.SelectDistinctWheres(System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object},System.String,System.Collections.Generic.List{System.Object})">
+ <summary>
+ Selectionne distinct une colonne d'une table d'une bdd avec plusieurs where
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.Select2Wheres(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})">
+ <summary>
+ Selectionne distinct 2 colonne d'une table d'une bdd avec plusieurs where
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.Select2DistinctWheres(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})">
+ <summary>
+ Selectionne distinct 2 colonne d'une table d'une bdd avec plusieurs where
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.DeleteWhere(System.String,System.String,System.Object)">
+ <summary>
+ Supprime une ligne d'une table à l'aide de son id EN STRING
+ </summary> 
+</member>
+<member name="M:WindowsApplication1.Connection.DeleteFrom(System.String)">
+ <summary>
+ Supprimer toute les lignes d'une table 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.DeleteWheres(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})">
+ <summary>
+ Supprime une ligne d'une table 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.Insert(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})">
+ <summary>
+ Ajoute une ligne dans une tab 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.InsertToSql(System.String,System.Collections.Generic.List{System.String}@,System.Collections.Generic.List{System.Object})">
+ <summary>
+ Ajoute une ligne dans une tab 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.Update(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object},System.String,System.Object)">
+ <summary>
+ Update ligne dans une tab 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.Updates(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})">
+ <summary>
+ Updates ligne dans une tab avec plusieurs where 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.SelectColonneName2">
+ <summary>
+ Selectionne le nom des colonnes d'une table du type spécifié
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.SelectColonneName(System.String,System.String,System.Boolean)">
+ <summary>
+ Selectionne le nom des colonnes d'une table du type spécifié
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.GetDicoSelect(System.String,System.String,System.String)">
+ <summary>
+ Renvoie un select dans un dico 
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.LoadDataGridByString(System.String)">
+ <summary>
+ Remplie un Data Grid à l'aide d'un string
+ </summary> 
+</member>
+<member name="M:WindowsApplication1.Connection.RequeteSqlToDataSet(System.String,System.String)">
+ <summary>
+ Remplie un Data Grid à l'aide d'un string
+ </summary> 
+</member>
+<member name="M:WindowsApplication1.Connection.LoadDataGridByProcedureStockée(System.Data.SqlClient.SqlCommand)">
+ <summary>
+ Remplie un Data Grid à l'aide d'une procédure stockée
+ </summary> 
+</member>
+<member name="M:WindowsApplication1.Connection.SqlToExcelEndSave(System.Collections.Generic.List{System.String},System.String,System.Int32,System.Int32)">
+ <summary>
+ Export une requete sql vers un fichier excel non existant
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.SqlToNewExcel(System.Collections.Generic.List{System.String},System.Int32)">
+ <summary>
+ Export une requete sql vers un nouveau fichier excel et le laisse ouvert
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.SqlToExcelExistant(System.String,System.String,System.String,System.String,System.Boolean,System.Int32,System.Int32,System.String)">
+ <summary>
+ Export une requete sql vers un fichier excel existant
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.sqlToListDico(System.String)">
+ <summary>
+ Retourne une liste de dictionnaire dont chaque dictionnaire correspond à une ligne d'une
+ table et ses colonnes.
+ </summary>
+ <param name="sql">Requête SQL contenant le select</param>
+ <returns>La liste de dictionnaire ayant comme clé la colonne de la table et comme valeur 
+ le champs de la ligne</returns>
+</member>
+<member name="M:WindowsApplication1.Connection.getSqlMultipleFields(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ Requete SQL pour remplir la partie General
+ </summary>
+ <param name="table">Nom de la table</param>
+ <param name="columns">List de String avec le nom des columns à afficher</param>
+ <param name="conditions">Table de Hachage avec les conditions</param>
+ <returns>s</returns>
+ <remarks>r</remarks>
+</member>
+<member name="M:WindowsApplication1.Connection.sqlToListObject``1(System.String,System.Func{``0})">
+ <summary>
+ Retourne une liste d'objet de type T à partir d'une requête SQL.
+ </summary>
+ <remarks>
+ Le constructeur du générique doit être précisé
+ Les colonnes dans la requête SQL doivent être identiques aux champs de l'objet T.
+ </remarks>
+</member>
+<member name="M:WindowsApplication1.Connection.commandeSql(System.String,System.String,System.Boolean)">
+ <summary>
+ Execute une commande sql à partir  d'un Sting
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.commandeSqlnoInsert(System.String)">
+ <summary>
+ Execute une commande sql à partir  d'un String sans insertion dans une table de la BDD
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Connection.LectureFichierSql(System.String)">
+ <summary>
+ Permet de lire un fichier Sql en enlevant les lignes contenant --
+ </summary>
+</member>
+<member name="M:WindowsApplication1.AjoutUtilisateur.AjoutUtilisateur_Load(System.Object,System.EventArgs)">
+ <summary>
+ Initialisation de l'ihm
+ </summary>
+</member>
+<member name="M:WindowsApplication1.AjoutUtilisateur.BCancel_Click(System.Object,System.EventArgs)">
+ <summary>
+ BCancel : ferme l'ihm
+ </summary>
+</member>
+<member name="M:WindowsApplication1.AjoutUtilisateur.BAdd_Click(System.Object,System.EventArgs)">
+ <summary>
+ BAdd : ajout new user dans la base
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Log.Log(WindowsApplication1.ELog,System.String,System.String)">
+ <summary>
+ Consigne les erreurs dans un fichier texte
+ </summary>
+</member>
+<member name="T:WindowsApplication1.ELog">
+ <summary>
+ Enumération de log possible
+ </summary>
+</member>
+<member name="M:WindowsApplication1.Verification.BCharger_Click(System.Object,System.EventArgs)">
+ <summary>
+ BCharger : remplir les datagrids
+ </summary>
+</member>
+<member name="T:WindowsApplication1.XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+<summary>
+GeneratedInternalTypeHelper
+</summary>
+</member>
+<member name="M:WindowsApplication1.XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+<summary>
+CreateInstance
+</summary>
+</member>
+<member name="M:WindowsApplication1.XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+<summary>
+GetPropertyValue
+</summary>
+</member>
+<member name="M:WindowsApplication1.XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+<summary>
+SetPropertyValue
+</summary>
+</member>
+<member name="M:WindowsApplication1.XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+<summary>
+CreateDelegate
+</summary>
+</member>
+<member name="M:WindowsApplication1.XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+<summary>
+AddEventHandler
+</summary>
+</member>
+</members>
+</doc>

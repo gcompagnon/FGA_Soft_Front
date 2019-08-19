@@ -1,0 +1,121 @@
+﻿<Window x:Class="Action.Note.BaseActionNote"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:note="clr-namespace:WindowsApplication1.Action.Note"
+             xmlns:util="clr-namespace:WindowsApplication1.Utilities"
+             xmlns:localprimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=PresentationFramework"
+             mc:Ignorable="d" Title="Paramètres des critères qualitatifs"
+             WindowStartupLocation="CenterOwner" d:DesignHeight="300" d:DesignWidth="400" SizeToContent="WidthAndHeight">
+    <Window.Resources>
+        <util:NotConverter x:Key="NotConverter"/>
+
+        <Style x:Key="ColumnHeaderStyle" TargetType="{x:Type localprimitives:DataGridColumnHeader}">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="23*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <Label Content="Secteur :" MinWidth="60" />
+            <ComboBox Name="CBSelectedTable" MinWidth="160" HorizontalAlignment="Left" Margin="5,0"
+                      IsSynchronizedWithCurrentItem="True" 
+                      ItemsSource="{Binding Tables}"
+                      SelectedItem="{Binding SelectedTable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                      DisplayMemberPath="Name"/>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="1"> 
+            <Label Content="Critère :" MinWidth="60" />
+            <ComboBox Name="CBSelectedColumn" MinWidth="160" Margin="5,0"
+                      DataContext="{Binding Tables}"
+                      ItemsSource="{Binding OtherColumns, Mode=OneWay}"
+                      DisplayMemberPath="Name" IsSynchronizedWithCurrentItem="True" />
+            <Button Content="Ajouter Critère" Name="BAddColumn" Grid.Column="1" MinWidth="120" HorizontalAlignment="Left" Margin="10,0" />
+        </StackPanel>
+
+        <DataGrid x:Name="DGColumns" DataContext="{Binding Tables}" ItemsSource="{Binding Columns, Mode=TwoWay}" HeadersVisibility="Column" AutoGenerateColumns="False" GridLinesVisibility="None" Grid.Row="2" Grid.ColumnSpan="3" CanUserSortColumns="False" ColumnHeaderStyle="{Binding Source={StaticResource ColumnHeaderStyle}}">
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="DataGridRow">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Is_Activated}" Value="False">
+                            <Setter Property="Background" Value="LightGray"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.ItemContainerStyle>
+            
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nom" Binding="{Binding Name, UpdateSourceTrigger=LostFocus}" CanUserSort="False"/>
+
+                <DataGridCheckBoxColumn Header="Activé" Binding="{Binding Is_Activated, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" CanUserSort="False" />
+
+                <DataGridTemplateColumn Header="Type" CanUserSort="False">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <RadioButton x:Name="RBComment" Content="Commentaire" IsChecked="{Binding ElementName=RBNote, Converter={StaticResource NotConverter}, Path=IsChecked}" Margin="5,0" />
+                                <RadioButton x:Name="RBNote" Content="Note" IsChecked="{Binding Is_Note, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5,0"  />
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Coef" CanUserSort="False">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox x:Name="TBCoef" Text="{Binding Coef, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
+                            <DataTemplate.Triggers>
+                                <DataTrigger  Binding="{Binding Is_Note}" Value="False">
+                                    <Setter TargetName="TBCoef" Property="Background" Value="LightGray"/>
+                                    <Setter TargetName="TBCoef" Property="IsReadOnly" Value="True"/>
+                                </DataTrigger>
+                            </DataTemplate.Triggers>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Position" CanUserSort="False">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button Click="DG_BPosUp_Click" VerticalAlignment="Center" Width="20" Height="20" ToolTip="Monter">
+                                    <Image Source="../../IMAGES/up.jpg"/>
+                                </Button>
+                                <Button Click="DG_BPosDown_Click" VerticalAlignment="Center" Width="20" Height="20" ToolTip="Descendre">
+                                    <Image Source="../../IMAGES/down.jpg"/>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Supprimer" CanUserSort="False">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="DG_BDelete_Click" VerticalAlignment="Center" Background="#FFB7B7B7" Width="20" Content="X" ToolTip="supprimer le critère et toutes ses notes"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <Button Content="Valider" MinWidth="120" Margin="10" Name="BApply" />
+            <Button Content="Annuler" MinWidth="120" Margin="10" Name="BCancel" />
+        </StackPanel>
+    </Grid>
+</Window>

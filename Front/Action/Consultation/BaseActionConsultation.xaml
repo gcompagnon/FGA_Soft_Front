@@ -1,0 +1,169 @@
+﻿<Window x:Class="Action.Consultation.BaseActionConsultation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WindowsApplication1.Action.Consultation"
+             mc:Ignorable="d" 
+             d:DesignHeight="398" d:DesignWidth="1230" Height="699" Name="BaseActionConsultation" Title="Base Action Consultation" SizeToContent="Width" MinWidth="800">
+    <Window.DataContext>
+        <local:BaseActionConsultationViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <local:RowConverter x:Key="converter"/>
+        <Style TargetType="TextBlock" x:Key="detailsSmallTitle">
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="detailsSmallText">
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+
+        <Style x:Key="darkBorder" TargetType="Border">
+            <Setter Property="BorderBrush" Value="Gray" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="Margin" Value="0,10,0,10" />
+        </Style>
+
+        <DataTemplate x:Key="cityDetails">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Text="Company Name: " Grid.Column="0" Grid.Row="0" Style="{StaticResource detailsSmallTitle}"/>
+                <TextBlock Text="{Binding Key}" Grid.Column="1" Grid.Row="0" Style="{StaticResource detailsSmallText}"/>
+                <TextBlock Text="Valeur: " Grid.Column="0" Grid.Row="1" Style="{StaticResource detailsSmallTitle}"/>
+                <TextBlock Text="{Binding Value}" Grid.Column="1" Grid.Row="1" Style="{StaticResource detailsSmallText}"/>
+            </Grid>
+        </DataTemplate>
+
+        <Style x:Key="RightCellStyle" TargetType="{x:Type DataGridCell}">
+            <Setter Property="ContentPresenter.HorizontalAlignment" Value="Right"/>
+        </Style>
+        <Style x:Key="LeftCellStyle" TargetType="{x:Type DataGridCell}">
+            <Setter Property="ContentPresenter.HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style x:Key="CenterCellStyle" TargetType="{x:Type DataGridCell}">
+            <Setter Property="ContentPresenter.HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="StretchCellStyle" TargetType="{x:Type DataGridCell}">
+            <Setter Property="ContentPresenter.HorizontalAlignment" Value="Stretch"/>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="0,5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Menu Height="30" Name="menu1" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="2">
+            <MenuItem Header="_Action" Margin="0">
+                <MenuItem Header="_Score/Reco" Checked="ScoreRecoMenu_Click" IsCheckable="true" />
+                <Separator/>
+                <MenuItem Header="_Doublons" Checked="DoublonsMenu_Click" IsCheckable="true" />
+                <MenuItem.Background>
+                    <SolidColorBrush />
+                </MenuItem.Background>
+            </MenuItem>
+            <Menu.Background>
+                <SolidColorBrush />
+            </Menu.Background>
+        </Menu>
+        <StackPanel VerticalAlignment="Top" Orientation="Horizontal" Grid.Row="1">
+            <Label Content="Date" FontSize="12" VerticalAlignment="Center" Margin="20,5,0,5" />
+            <ComboBox Height="24" Name="CBDate" Text="Date" ItemsSource="{Binding Path=Dates}" SelectedIndex="0" Margin="2,0,0,0" MinWidth="80" />
+            <Label Margin="20,0,0,0" VerticalAlignment="Center" Content="Universe" Foreground="Black" Background="Peru" FontFamily="Segoe UI" FontSize="12" Focusable="True" Width="85" Height="Auto" />
+            <ComboBox Height="24" Name="CBUniverse" Text="Univers" ItemsSource="{Binding Path=Univers}" SelectedIndex="0" Margin="2,0,0,0" MinWidth="120"></ComboBox>
+            <Label Margin="20,0,0,0" VerticalAlignment="Center" Content="Sector GICS" Foreground="Black" Background="Tan" FontSize="12" Width="85" Height="Auto" />
+            <ComboBox Height="24" Name="CBSuperSecteur" Text="Super Secteur" SelectedIndex="1" ItemsSource="{Binding Path=SuperSecteurs}" DisplayMemberPath="Libelle" Margin="2,0,0,0" MinWidth="120"></ComboBox>
+            <Label Margin="20,0,0,0" VerticalAlignment="Center" Content="Industry FGA" Foreground="Black" Background="PaleGoldenrod" FontSize="12" Width="85" />
+            <ComboBox Height="24" Name="CBSecteur" Text="Secteur FGA" SelectedIndex="0" ItemsSource="{Binding Path=Secteurs}" DisplayMemberPath="Libelle" Margin="2,0,0,0" MinWidth="120"></ComboBox>
+            <Button Content="Load" Name="BLoad" Margin="20,0,0,0" VerticalAlignment="Center" Padding="4,3" />
+            <Button Content="Reco" Name="BReco" Margin="10,0,20,0" VerticalAlignment="Center" Padding="4,3" />
+        </StackPanel>
+        <!--Add the popup that appears when the filter is clicked...PlacementTarget="{Binding ElementName=btnCountryFilter}"-->
+        <Popup Name="PopUp" Placement="Center"  StaysOpen="True" MinWidth="200" MinHeight="24" MaxHeight="400">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="1" Name="BValider_GenClick" Height="24" Click="Valider_GenClick" Margin="0,0,0,0" Content="Valider" />
+                    <Button Grid.Row="1" Name="BValider_CroClick" Height="24" Click="Valider_CroClick" Margin="0,0,0,0" Content="Valider" />
+                    <Button Grid.Row="1" Name="BValider_QuaClick" Height="24" Click="Valider_QuaClick" Margin="0,0,0,0" Content="Valider" />
+                    <Button Grid.Row="1" Name="BValider_ValClick" Height="24" Click="Valider_ValClick" Margin="0,0,0,0" Content="Valider" />
+                    <Button Grid.Row="1" Name="BValider_MomClick" Height="24" Click="Valider_MomClick" Margin="0,0,0,0" Content="Valider" />
+                    <Button Grid.Row="1" Name="BValider_SynClick" Height="24" Click="Valider_SynClick" Margin="0,0,0,0" Content="Valider" />
+                    <Grid>
+                        <DataGrid Name="DGFilter" ItemsSource="{Binding Path=ColValues}" Margin="0,0,0,5" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Path=Value}" x:Name="Value" Header="Value" MinWidth="150" />
+                                <DataGridTemplateColumn x:Name="Check" CanUserSort="False">
+                                    <DataGridTemplateColumn.Header>
+                                        <CheckBox x:Name="TestCheckBoxHeader" Checked="CheckBoxHeader_Checked" Unchecked="UnCheckBoxHeader_Checked"></CheckBox>
+                                    </DataGridTemplateColumn.Header>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <CheckBox x:Name="TestCheckBox" IsChecked="{Binding Path=Check, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Grid>
+            </ScrollViewer>
+        </Popup>
+
+        <TabControl  Name="TabControl1" Grid.Row="2">
+            <TabItem Header="Général" Name="TGeneral">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <Expander Header="Configuration" IsExpanded="False" Grid.Row="0" Name="Expander1">
+                        <local:GridConfig Prop="General" x:Name="GCGeneral" />
+                    </Expander>
+                    <DataGrid Name="DGGeneral" MouseDoubleClick="btnFilter_Click" LoadingRow="dataGrid_LoadingRow" CellStyle="{StaticResource RightCellStyle}" ItemsSource="{Binding Path=GenTableView}" CanUserAddRows="False" AutoGenerateColumns="True" Grid.Row="2" HorizontalGridLinesBrush="#FF688CAF" VerticalGridLinesBrush="#FF688CAF" SelectionMode="Extended" IsEnabled="True" IsReadOnly="True" SelectionUnit="CellOrRowHeader" RowHeaderWidth="25" ClipboardCopyMode="IncludeHeader" CanUserSortColumns="True">
+                        <DataGrid.ColumnHeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <EventSetter Event="Click" Handler="columnHeader_Click" />
+                            </Style>
+                        </DataGrid.ColumnHeaderStyle>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Croissance" Name="TCroissance">
+                <DataGrid Name="DGCroissance" MouseDoubleClick="btnFilter_Click" LoadingRow="dataGrid_LoadingRow" CellStyle="{StaticResource RightCellStyle}" ItemsSource="{Binding Path=CroTableView}" CanUserAddRows="False" AutoGenerateColumns="True" Grid.Row="2" HorizontalGridLinesBrush="#FF688CAF" VerticalGridLinesBrush="#FF688CAF" SelectionMode="Extended" IsEnabled="True" IsReadOnly="True" SelectionUnit="CellOrRowHeader" RowHeaderWidth="25" ClipboardCopyMode="IncludeHeader">
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Qualité" Name="TQualite">
+                <DataGrid Name="DGQualite" MouseDoubleClick="btnFilter_Click" LoadingRow="dataGrid_LoadingRow" CellStyle="{StaticResource RightCellStyle}" ItemsSource="{Binding Path=QuaTableView}" CanUserAddRows="False" AutoGenerateColumns="True" Grid.Row="2" HorizontalGridLinesBrush="#FF688CAF" VerticalGridLinesBrush="#FF688CAF" SelectionMode="Extended" IsEnabled="True" IsReadOnly="True" SelectionUnit="CellOrRowHeader" RowHeaderWidth="25" ClipboardCopyMode="IncludeHeader">
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Valorisation" Name="TValorisation">
+                <DataGrid Name="DGValorisation" MouseDoubleClick="btnFilter_Click" LoadingRow="dataGrid_LoadingRow" CellStyle="{StaticResource RightCellStyle}" ItemsSource="{Binding Path=ValTableView}" CanUserAddRows="False" AutoGenerateColumns="True" Grid.Row="2" HorizontalGridLinesBrush="#FF688CAF" VerticalGridLinesBrush="#FF688CAF" SelectionMode="Extended" IsEnabled="True" IsReadOnly="True" SelectionUnit="CellOrRowHeader" RowHeaderWidth="25" ClipboardCopyMode="IncludeHeader">
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Momentum" Name="TMomentum">
+                <DataGrid Name="DGMomentum" MouseDoubleClick="btnFilter_Click" LoadingRow="dataGrid_LoadingRow" CellStyle="{StaticResource RightCellStyle}" ItemsSource="{Binding Path=MomTableView}" CanUserAddRows="False" AutoGenerateColumns="True" Grid.Row="2" HorizontalGridLinesBrush="#FF688CAF" VerticalGridLinesBrush="#FF688CAF" SelectionMode="Extended" IsEnabled="True" IsReadOnly="True" SelectionUnit="CellOrRowHeader" RowHeaderWidth="25" ClipboardCopyMode="IncludeHeader">
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Synthèse" Name="TSynthese">
+                <DataGrid Name="DGSynthese" MouseDoubleClick="btnFilter_Click" LoadingRow="dataGrid_LoadingRow" CellStyle="{StaticResource RightCellStyle}" ItemsSource="{Binding Path=SynTableView}" CanUserAddRows="False" AutoGenerateColumns="True" Grid.Row="2" HorizontalGridLinesBrush="#FF688CAF" VerticalGridLinesBrush="#FF688CAF" SelectionMode="Extended" IsEnabled="True" IsReadOnly="True" SelectionUnit="CellOrRowHeader" RowHeaderWidth="25" ClipboardCopyMode="IncludeHeader">
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
